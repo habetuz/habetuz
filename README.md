@@ -1,2 +1,2 @@
 # me
-My personal [website](https://github.com/user/repo/blob/branch/other_file.md)
+My personal [website](https://habetuz.github.io/me)
