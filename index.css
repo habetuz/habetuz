@@ -1,6 +1,27 @@
 /* CSS Document */
+/* montserrat-regular - latin */
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		 url('fonts/montserrat-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('fonts/montserrat-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  
+  /* montserrat-600 - latin */
+  @font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	src: local(''),
+		 url('fonts/montserrat-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('fonts/montserrat-v15-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
 body {
 	background-color: #121414;
+	/*font-family: 'Montserrat', serif;*/
 }
 
 #logo_long {
@@ -19,4 +40,29 @@ body {
 	transform: translate(-50%, 0%);
 	width: 50px;
 	max-width: 10%;
+}
+
+#about {
+	position: absolute;
+	left: 1%;
+	bottom: 1%;
+	transform: rotate(-90deg) translateY(100%);
+	transform-origin: top left;
+	font-family: 'Montserrat', serif;
+	font-weight: 600;
+	font-size: 20px;
+	color: #BA1A1A;
+}
+
+.animated_underline {
+	background-image: linear-gradient( #BA1A1A, #BA1A1A);
+	background-size: 0 3px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 500ms;
+}
+
+.animated_underline:hover {
+	cursor: pointer;
+	background-size: 100% 3px;
 }
