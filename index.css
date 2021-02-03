@@ -8,5 +8,15 @@ body {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	max-width: 100%;
+	width: 1000px;
+	max-width: 80%;
+}
+
+#scroll_arrow {
+	position: absolute;
+	left: 50%;
+	bottom: 5%;
+	transform: translate(-50%, 0%);
+	width: 50px;
+	max-width: 10%;
 }
