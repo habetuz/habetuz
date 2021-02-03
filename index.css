@@ -1,0 +1,12 @@
+/* CSS Document */
+body {
+	background-color: #121414;
+}
+
+#logo_long {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+}
