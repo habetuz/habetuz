@@ -24,16 +24,27 @@ body {
 	overflow: hidden;
 }
 
-#logo_long {
+#logo {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+	transform-origin: left top;
 	width: 1000px;
 	max-width: 80%;
+	transition: all 1s;
 }
 
-#scroll_arrow {
+#logo_disapear {
+	opacity: 100%;
+	transition: all 1s;
+}
+
+#logo_H {
+	transition: all 1s;
+}
+
+#scroll_arrows {
 	position: absolute;
 	left: 50%;
 	bottom: 5%;
@@ -42,12 +53,16 @@ body {
 	max-width: 10%;
 }
 
+#scroll_arrows:hover {
+	cursor: pointer;
+}
+
 #about {
 	position: absolute;
 	left: 1%;
-	bottom: 1%;
+	bottom: .5%;
 	transform: rotate(-90deg) translateY(100%);
-	transform-origin: top left;
+	transform-origin: bottom left;
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
 	font-size: 20px;
