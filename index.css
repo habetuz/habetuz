@@ -30,8 +30,7 @@ body {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	transform-origin: left top;
-	width: 1000px;
-	max-width: 80%;
+	width: 50%;
 	transition: all 1s;
 }
 
@@ -80,4 +79,10 @@ body {
 .animated_underline:hover {
 	cursor: pointer;
 	background-size: 100% 3px;
+}
+
+@media screen and (max-width: 780px){
+		#logo {
+			width: 80%;
+		}
 }
