@@ -20,10 +20,12 @@ document.getElementById("about").addEventListener("click", function(e) {
 })
 
 var logoCollapsed = false
-var aboutOpen = false;
-var socialMediaOpen = false;
+var aboutOpen = false
+var socialMediaOpen = false
 
 var lastBevorAbout
+
+loadUrl()
 
 function scroll(event) {
     if(event.deltaY > 0 && !logoCollapsed) {
@@ -72,6 +74,7 @@ function expandLogo() {
 }
 
 function onLogoTransformationEnd() {
+    console.log(logoCollapsed)
     if(!logoCollapsed) {
         document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
@@ -117,4 +120,18 @@ function hideAbout() {
     lastBevorAbout()
 
     aboutOpen = false
+}
+
+function loadUrl() {
+    var anchor = document.URL.split('#')[1]
+    if(anchor == null) return
+
+    switch(anchor) {
+        case "about":
+            showAbout()
+            lastBevorAbout = expandLogo
+            break
+        default:
+            window.location.replace(window.location.pathname);
+    }
 }
