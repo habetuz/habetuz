@@ -52,12 +52,14 @@ h1 {
 	left: 50%;
 	bottom: 5%;
 	transform: translate(-50%, 0%);
+	transform-origin: center;
 	width: 50px;
-	transition: transform 0.5s;
+	transition: all 0.5s;
 }
 
 #scroll_arrows:hover {
 	cursor: pointer;
+	transform: translate(-50%, 0%) scale(120%);
 }
 
 #about {

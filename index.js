@@ -1,5 +1,6 @@
 document.getElementById("scroll_arrows").addEventListener('click', collapseLogo)
 document.getElementById("logo").addEventListener('click', expandLogo)
+document.addEventListener("wheel", scroll)
 
 var logoCollapsed = false;
 var logoWidthExpanded = document.getElementById("logo").style.width;
@@ -35,7 +36,15 @@ function expandLogo() {
     document.getElementById("scroll_arrows").style.transitionDelay = ("0.5s")
     document.getElementById("scroll_arrows").style.transform = "translate(-50%, 0) scale(1)"
 
-    document.getElementById("social_media_wrapper").style.bottom = "-" + document.getElementById("social_media_wrapper").offsetHeight + "px"
+    document.getElementById("social_media_wrapper").style.bottom = "-70px"
 
     logoCollapsed = false;
+}
+
+function scroll(event) {
+    if(event.deltaY > 0) {
+        collapseLogo()
+    } else {
+        expandLogo()
+    }
 }
