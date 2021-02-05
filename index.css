@@ -49,7 +49,6 @@ body {
 	bottom: 5%;
 	transform: translate(-50%, 0%);
 	width: 50px;
-	max-width: 10%;
 	transition: transform 0.5s;
 }
 
@@ -67,10 +66,21 @@ body {
 	font-weight: 600;
 	font-size: 20px;
 	color: #BA1A1A;
+	background-image: linear-gradient( #BA1A1A, #BA1A1A);
+}
+
+#social_media_wrapper {
+	display: flex;
+    justify-content: space-between;
+	width: 70%;
+	position: absolute;
+	left: 50%;
+	bottom: -50px;
+	transform: translate(-50%, -50%);
+	transition: all 1s;
 }
 
 .animated_underline {
-	background-image: linear-gradient( #BA1A1A, #BA1A1A);
 	background-size: 0 3px;
 	background-position: 0 100%;
 	background-repeat: no-repeat;
@@ -80,6 +90,14 @@ body {
 .animated_underline:hover {
 	cursor: pointer;
 	background-size: 100% 3px;
+}
+
+.social_media {
+	font-family: 'Montserrat', serif;
+	font-weight: 600;
+	font-size: 30px;
+	color: #E8911A;
+	background-image: linear-gradient( #E8911A, #E8911A);
 }
 
 @media screen and (max-width: 780px){
