@@ -31,7 +31,7 @@ function scroll(event) {
     if(event.deltaY > 0 && !logoCollapsed) {
         collapseLogo()
         showSocialMedia()
-    } else if(socialMediaOpen) {
+    } else if(event.deltaY < 0 && socialMediaOpen) {
         expandLogo()
         hideSocialMedia()
     }
@@ -132,6 +132,6 @@ function loadUrl() {
             lastBevorAbout = expandLogo
             break
         default:
-            window.location.replace(window.location.pathname);
+            window.location.replace("/");
     }
 }
