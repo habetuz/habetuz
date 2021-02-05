@@ -108,6 +108,8 @@ function showAbout() {
     document.getElementById("about").style.bottom = "70%"
     document.getElementById("about").style.backgroundSize = "100% 3px"
 
+    document.getElementById("about_text").style.top ="30%"
+
     aboutOpen = true
 }
 
@@ -117,6 +119,8 @@ function hideAbout() {
     document.getElementById("about").style.removeProperty("left")
     document.getElementById("about").style.removeProperty("bottom")
     document.getElementById("about").style.removeProperty("background-size")
+
+    document.getElementById("about_text").style.removeProperty("top")
 
     lastBevorAbout()
 
