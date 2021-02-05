@@ -1,13 +1,42 @@
-document.getElementById("scroll_arrows").addEventListener('click', collapseLogo)
-document.getElementById("logo").addEventListener("transitionend", logoTransformationEnd)
-document.getElementById("logo").addEventListener('click', expandLogo)
+document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
+document.getElementById("logo").addEventListener('click', function(e) {
+    if(logoCollapsed) {
+        hideAll()
+        expandLogo()
+    }
+})
+document.getElementById("scroll_arrows").addEventListener('click', function(e) {
+    collapseLogo()
+    showSocialMedia()
+})
 document.addEventListener("wheel", scroll)
 
-var collapsed = false
+document.getElementById("about").addEventListener("click", function(e) {
+    if(aboutOpen) {
+        hideAbout()
+    } else {
+        showAbout()
+    }
+})
 
+var logoCollapsed = false
+var aboutOpen = false;
+var socialMediaOpen = false;
+
+var lastBevorAbout
+
+function scroll(event) {
+    if(event.deltaY > 0 && !logoCollapsed) {
+        collapseLogo()
+        showSocialMedia()
+    } else if(socialMediaOpen) {
+        expandLogo()
+        hideSocialMedia()
+    }
+}
 
 function collapseLogo() {
-    if(!collapsed) {
+    if(!logoCollapsed) {
         document.getElementById("logo_disapear").style.opacity = "0";
         document.getElementById("logo_disapear").style.transitionDelay = "0s"
     
@@ -20,13 +49,12 @@ function collapseLogo() {
         document.getElementById("scroll_arrows").style.transitionDelay = ("0s")
         document.getElementById("scroll_arrows").style.transform = "translate(-50%, -500px) scale(0)"
         
-        document.getElementById("social_media_wrapper").style.bottom = "50%"
-        collapsed = true
+        logoCollapsed = true
     }
 }
 
 function expandLogo() {
-    if(collapsed) {
+    if(logoCollapsed) {
         document.getElementById("logo_disapear").style.removeProperty("opacity")
         document.getElementById("logo_disapear").style.removeProperty("transition")
     
@@ -39,21 +67,54 @@ function expandLogo() {
         document.getElementById("scroll_arrows").style.transitionDelay = ("0.5s")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
     
-        document.getElementById("social_media_wrapper").style.removeProperty("bottom")
-        collapsed = false;
+        logoCollapsed = false;
     }
 }
-function logoTransformationEnd() {
-    if(!collapsed) {
+
+function onLogoTransformationEnd() {
+    if(!logoCollapsed) {
         document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
     }
 }
 
-function scroll(event) {
-    if(event.deltaY > 0) {
-        collapseLogo()
-    } else {
-        expandLogo()
-    }
+function hideAll() {
+    if(aboutOpen) hideAbout()
+    if(socialMediaOpen) hideSocialMedia()
+}
+
+function showSocialMedia() {
+    document.getElementById("social_media_wrapper").style.bottom = "50%"
+    socialMediaOpen = true;
+}
+
+function hideSocialMedia() {
+    document.getElementById("social_media_wrapper").style.removeProperty("bottom")
+    socialMediaOpen = false;
+}
+
+function showAbout() {
+    if(socialMediaOpen)     lastBevorAbout = showSocialMedia
+    else if(!logoCollapsed) lastBevorAbout = expandLogo
+
+    collapseLogo()
+    hideAll()
+
+    document.getElementById("about").style.transform = "translate(-50%,50%)"
+    document.getElementById("about").style.fontSize = "30px"
+    document.getElementById("about").style.left = "50%"
+    document.getElementById("about").style.bottom = "70%"
+
+    aboutOpen = true
+}
+
+function hideAbout() {
+    document.getElementById("about").style.removeProperty("transform")
+    document.getElementById("about").style.removeProperty("font-size")
+    document.getElementById("about").style.removeProperty("left")
+    document.getElementById("about").style.removeProperty("bottom")
+
+    lastBevorAbout()
+
+    aboutOpen = false
 }

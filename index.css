@@ -64,15 +64,15 @@ h1 {
 
 #about {
 	position: fixed;
-	left: 20px;
-	bottom: 5px;
-	transform: rotate(-90deg) translateY(100%);
-	transform-origin: bottom left;
+	left: -30px;
+	bottom: 30px;
+	transform: rotate(-90deg) translate(0, 100%);
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
 	font-size: 20px;
 	color: #BA1A1A;
 	background-image: linear-gradient( #BA1A1A, #BA1A1A);
+	transition: all 1s;
 }
 
 #social_media_wrapper {
