@@ -1,8 +1,11 @@
 document.getElementById("scroll_arrows").addEventListener('click', collapseLogo)
+document.getElementById("logo").addEventListener("transitionend", logoExpantionEnd)
 document.getElementById("logo").addEventListener('click', expandLogo)
 document.addEventListener("wheel", scroll)
 
-var logoWidthExpanded = document.getElementById("logo").style.width;
+var logoWidthExpanded = document.getElementById("logo").style.width
+var collapsed = false
+
 
 function collapseLogo() {
     document.getElementById("logo_disapear").style.opacity = "0";
@@ -18,6 +21,7 @@ function collapseLogo() {
     document.getElementById("scroll_arrows").style.transform = "translate(-50%, -500px) scale(0)"
     
     document.getElementById("social_media_wrapper").style.bottom = "50%"
+    collapsed = true
 }
 
 function expandLogo() {
@@ -32,10 +36,15 @@ function expandLogo() {
 
     document.getElementById("scroll_arrows").style.transitionDelay = ("0.5s")
     document.getElementById("scroll_arrows").style.transform = "translate(-50%, 0) scale(1)"
-    document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
-    document.getElementById("scroll_arrows").style.removeProperty("transform")
+    
 
     document.getElementById("social_media_wrapper").style.bottom = "-70px"
+}
+function logoExpantionEnd() {
+    if(!collapsed) {
+        document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
+        document.getElementById("scroll_arrows").style.removeProperty("transform")
+    }
 }
 
 function scroll(event) {
