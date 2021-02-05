@@ -58,6 +58,7 @@ h1 {
 }
 
 #scroll_arrows:hover {
+	transition-delay: 0s;
 	cursor: pointer;
 	transform: translate(-50%, 0%) scale(120%);
 }
