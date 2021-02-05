@@ -1,9 +1,8 @@
 document.getElementById("scroll_arrows").addEventListener('click', collapseLogo)
-document.getElementById("logo").addEventListener("transitionend", logoExpantionEnd)
+document.getElementById("logo").addEventListener("transitionend", logoTransformationEnd)
 document.getElementById("logo").addEventListener('click', expandLogo)
 document.addEventListener("wheel", scroll)
 
-var logoWidthExpanded = document.getElementById("logo").style.width
 var collapsed = false
 
 
@@ -28,24 +27,23 @@ function collapseLogo() {
 
 function expandLogo() {
     if(collapsed) {
-        document.getElementById("logo_disapear").style.opacity = "1";
-        document.getElementById("logo_disapear").style.transitionDelay = "0.5s"
+        document.getElementById("logo_disapear").style.removeProperty("opacity")
+        document.getElementById("logo_disapear").style.removeProperty("transition")
     
-        document.getElementById("logo_H").style.transform = "translate( 0,0)"
+        document.getElementById("logo_H").style.removeProperty("transform")
     
-        document.getElementById("logo").style.left = "50%"
-        document.getElementById("logo").style.top = "50%"
-        document.getElementById("logo").style.width = logoWidthExpanded
+        document.getElementById("logo").style.removeProperty("left")
+        document.getElementById("logo").style.removeProperty("top")
+        document.getElementById("logo").style.removeProperty("width")
     
         document.getElementById("scroll_arrows").style.transitionDelay = ("0.5s")
-        document.getElementById("scroll_arrows").style.transform = "translate(-50%, 0) scale(1)"
-        
+        document.getElementById("scroll_arrows").style.removeProperty("transform")
     
         document.getElementById("social_media_wrapper").style.removeProperty("bottom")
         collapsed = false;
     }
 }
-function logoExpantionEnd() {
+function logoTransformationEnd() {
     if(!collapsed) {
         document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
