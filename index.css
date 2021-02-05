@@ -114,7 +114,7 @@ h1 {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+	user-select: none;
 }
 
 @media screen and (max-width: 780px){
