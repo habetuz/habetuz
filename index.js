@@ -38,7 +38,7 @@ function expandLogo() {
     document.getElementById("scroll_arrows").style.transform = "translate(-50%, 0) scale(1)"
     
 
-    document.getElementById("social_media_wrapper").style.bottom = "-70px"
+    document.getElementById("social_media_wrapper").style.removeProperty("bottom")
 }
 function logoExpantionEnd() {
     if(!collapsed) {

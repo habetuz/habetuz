@@ -116,6 +116,6 @@ h1 {
 		#social_media_wrapper {
 			flex-direction: column;
 			height: 70%;
-			bottom: -70%;
+			bottom: -100%;
 		}
 }
