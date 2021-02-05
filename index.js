@@ -74,7 +74,6 @@ function expandLogo() {
 }
 
 function onLogoTransformationEnd() {
-    console.log(logoCollapsed)
     if(!logoCollapsed) {
         document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
@@ -107,6 +106,7 @@ function showAbout() {
     document.getElementById("about").style.fontSize = "30px"
     document.getElementById("about").style.left = "50%"
     document.getElementById("about").style.bottom = "70%"
+    document.getElementById("about").style.backgroundSize = "100% 3px"
 
     aboutOpen = true
 }
@@ -116,6 +116,7 @@ function hideAbout() {
     document.getElementById("about").style.removeProperty("font-size")
     document.getElementById("about").style.removeProperty("left")
     document.getElementById("about").style.removeProperty("bottom")
+    document.getElementById("about").style.removeProperty("background-size")
 
     lastBevorAbout()
 

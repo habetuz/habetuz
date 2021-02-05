@@ -75,6 +75,13 @@ h1 {
 	transition: all 1s;
 }
 
+#about_text {
+	font-family: 'Montserrat', serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #E3E5E5;
+}
+
 #social_media_wrapper {
 	display: flex;
     justify-content: space-between;
@@ -84,6 +91,14 @@ h1 {
 	bottom: -50px;
 	transform: translate(-50%, +50%);
 	transition: all 1s;
+}
+
+#about_text {
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50%;
 }
 
 .animated_underline {
@@ -116,6 +131,11 @@ h1 {
 	user-select: none;
 }
 
+.link {
+	color: #B1CBCA;
+	background-image: linear-gradient( #B1CBCA, #B1CBCA);
+}
+
 @media screen and (max-width: 780px){
 		#logo {
 			width: 80%;
@@ -125,5 +145,9 @@ h1 {
 			flex-direction: column;
 			height: 70%;
 			bottom: -100%;
+		}
+
+		#about_text {
+			width: 70%;
 		}
 }
