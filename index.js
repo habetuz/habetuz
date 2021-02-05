@@ -39,6 +39,7 @@ function expandLogo() {
     
 
     document.getElementById("social_media_wrapper").style.removeProperty("bottom")
+    collapsed = false;
 }
 function logoExpantionEnd() {
     if(!collapsed) {
