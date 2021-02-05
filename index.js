@@ -35,7 +35,7 @@ function expandLogo() {
     document.getElementById("scroll_arrows").style.transitionDelay = ("0.5s")
     document.getElementById("scroll_arrows").style.transform = "translate(-50%, 0) scale(1)"
 
-    document.getElementById("social_media_wrapper").style.bottom = "-50px"
+    document.getElementById("social_media_wrapper").style.bottom = "-" + document.getElementById("social_media_wrapper").offsetHeight + "px"
 
     logoCollapsed = false;
 }
