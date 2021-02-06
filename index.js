@@ -118,9 +118,15 @@ function hideAll() {
 
 function showSocialMedia() {
     pushState("")
-    Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+    if(window.innerWidth > 780) Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.top = "50%"
     });
+
+    else {
+        document.getElementById("youtube").style.top = "30%"
+        document.getElementById("instagram").style.top = "50%"
+        document.getElementById("github").style.top = "70%"
+    }
     socialMediaOpen = true;
 }
 
@@ -146,7 +152,7 @@ function showAbout() {
     document.getElementById("about").style.fontSize = "30px"
     document.getElementById("about").style.left = "50%"
     document.getElementById("about").style.bottom = "70%"
-    document.getElementById("about").style.backgroundSize = "100% 3px"
+    if(window.innerWidth < 780) document.getElementById("about").style.backgroundSize = "100% 3px"
 
     document.getElementById("about_text").style.position = "absolute"
     document.getElementById("about_text").style.top = "30%"
@@ -196,6 +202,7 @@ function showYoutube() {
     document.getElementById("youtube").style.top = "30%"
     document.getElementById("youtube").style.fontSize = "50px"
     document.getElementById("youtube").style.position = "absolute"
+    if(window.innerWidth < 780) document.getElementById("youtube").style.backgroundSize = "100% 3px"
 
     document.getElementById("instagram").style.transform = "translate(0, 0)"
     document.getElementById("instagram").style.top = "10px"
@@ -218,6 +225,7 @@ function hideYoutube() {
     document.getElementById("youtube").style.removeProperty("right")
     document.getElementById("youtube").style.removeProperty("top")
     document.getElementById("youtube").style.removeProperty("font-size")
+    document.getElementById("youtube").style.removeProperty("background-size")
 
     document.getElementById("instagram").style.removeProperty("transform")
     document.getElementById("instagram").style.removeProperty("top")

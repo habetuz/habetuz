@@ -173,10 +173,16 @@ h1 {
 		width: 80%;
 	}
 
-	#social_media_wrapper {
-		flex-direction: column;
-		height: 70%;
-		bottom: -100%;
+	#youtube {
+		right: 50%;
+	}
+
+	#instagram {
+		right: 50%;
+	}
+
+	#github {
+		right: 50%;
 	}
 
 	#about_text {
