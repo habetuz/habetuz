@@ -1,5 +1,6 @@
 document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
 document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
+document.getElementById("youtube_content").addEventListener("transitionend", onYoutubeTransformationEnd)
 
 document.getElementById("logo").addEventListener('click', function() {
     if(logoCollapsed) {
@@ -34,19 +35,23 @@ var aboutOpen = false
 var socialMediaOpen = false
 var youtubeOpen = false
 
+var youtubeLoaded = false
+
 var afterAboutHide
 
 var videoSources = [
+    "https://www.youtube-nocookie.com/embed/-i2GwcvDA1s",
     "https://www.youtube-nocookie.com/embed/k5O2HBL-euw",
     "https://www.youtube-nocookie.com/embed/sWHvbdEexeM",
     "https://www.youtube-nocookie.com/embed/5l95Jm90ilM",
     "https://www.youtube-nocookie.com/embed/oilqao_a-Hs",
-    "https://www.youtube-nocookie.com/embed/T55dDCaWBFg"
+    "https://www.youtube-nocookie.com/embed/T55dDCaWBFg",
 ]
 var video = document.createElement("iframe")
 video.classList.add("video")
 video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 video.allowFullscreen = true
+video.frameBorder = 0
 
 loadUrl()
 
@@ -136,8 +141,6 @@ function showAbout() {
     collapseLogo()
     hideAll()
 
-    document.body.style.overflowY = "auto"
-
     document.getElementById("about").style.position = "absolute"
     document.getElementById("about").style.transform = "translate(-50%,50%)"
     document.getElementById("about").style.fontSize = "30px"
@@ -152,7 +155,6 @@ function showAbout() {
 }
 
 function hideAbout() {
-    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 
     document.getElementById("about").style.removeProperty("transform")
@@ -179,9 +181,21 @@ function showYoutube() {
     pushState("youtube")
     hideAll()
 
+    if(!youtubeLoaded) {
+        videoSources.forEach(source => {
+            var copy = video.cloneNode(true)
+            copy.src = source
+            document.getElementById("youtube_content").appendChild(copy)
+        })
+        youtubeLoaded = true
+    }
+    document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
+    document.getElementById("youtube_content").style.position = "absolute"
+
     document.getElementById("youtube").style.right = "50%"
     document.getElementById("youtube").style.top = "30%"
     document.getElementById("youtube").style.fontSize = "50px"
+    document.getElementById("youtube").style.position = "absolute"
 
     document.getElementById("instagram").style.transform = "translate(0, 0)"
     document.getElementById("instagram").style.top = "10px"
@@ -197,6 +211,10 @@ function showYoutube() {
 }
 
 function hideYoutube() {
+    document.documentElement.scrollTop = 0;
+
+    document.getElementById("youtube_content").style.removeProperty("top")
+
     document.getElementById("youtube").style.removeProperty("right")
     document.getElementById("youtube").style.removeProperty("top")
     document.getElementById("youtube").style.removeProperty("font-size")
@@ -210,8 +228,14 @@ function hideYoutube() {
     document.getElementById("github").style.removeProperty("top")
     document.getElementById("github").style.removeProperty("right")
     document.getElementById("github").style.removeProperty("font-size")
-
     youtubeOpen = false
+}
+
+function onYoutubeTransformationEnd() {
+    if(!youtubeOpen) {
+        document.getElementById("youtube_content").style.removeProperty("position")
+        document.getElementById("youtube").style.removeProperty("position")
+    }
 }
 
 function loadUrl() {

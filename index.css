@@ -25,7 +25,7 @@ html {
 
 body {
 	background-color: #121414;
-	overflow: hidden;
+	overflow: auto;
 }
 
 h1 {
@@ -103,6 +103,8 @@ h1 {
 	width: 80%;
 	top: 100%;
 	left: 50%;
+	padding-bottom: 64px;
+	transition: top 1s;
 	transform: translateX(-50%)
 
 }
