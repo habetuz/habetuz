@@ -19,6 +19,10 @@
 		 url('fonts/montserrat-v15-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: #121414;
 	overflow: hidden;
@@ -80,7 +84,8 @@ h1 {
 	font-weight: normal;
 	font-size: 20px;
 	color: #E3E5E5;
-	position: absolute;
+	position: fixed;
+	padding-bottom: 64px;
 	top: 100%;
 	left: 50%;
 	transform: translateX(-50%);

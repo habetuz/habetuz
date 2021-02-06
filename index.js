@@ -1,4 +1,5 @@
 document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
+document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
 document.getElementById("logo").addEventListener('click', function(e) {
     if(logoCollapsed) {
         hideAll()
@@ -111,15 +112,16 @@ function showAbout() {
     document.getElementById("about").style.bottom = "70%"
     document.getElementById("about").style.backgroundSize = "100% 3px"
 
-    document.getElementById("about_text").style.top ="30%"
+    document.getElementById("about_text").style.position = "absolute"
+    document.getElementById("about_text").style.top = "30%"
 
     aboutOpen = true
 }
 
 function hideAbout() {
-    document.body.style.removeProperty("overflow-Y")
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 
-    document.getElementById("about").style.removeProperty("position")
     document.getElementById("about").style.removeProperty("transform")
     document.getElementById("about").style.removeProperty("font-size")
     document.getElementById("about").style.removeProperty("left")
@@ -131,6 +133,13 @@ function hideAbout() {
     lastBevorAbout()
 
     aboutOpen = false
+}
+
+function onAboutTransformationEnd() {
+    if(!aboutOpen) {
+        document.getElementById("about").style.removeProperty("position")
+        document.getElementById("about_text").style.removeProperty("position")
+    }
 }
 
 function loadUrl() {
