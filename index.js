@@ -102,6 +102,9 @@ function showAbout() {
     collapseLogo()
     hideAll()
 
+    document.body.style.overflowY = "auto"
+
+    document.getElementById("about").style.position = "absolute"
     document.getElementById("about").style.transform = "translate(-50%,50%)"
     document.getElementById("about").style.fontSize = "30px"
     document.getElementById("about").style.left = "50%"
@@ -114,6 +117,9 @@ function showAbout() {
 }
 
 function hideAbout() {
+    document.body.style.removeProperty("overflow-Y")
+
+    document.getElementById("about").style.removeProperty("position")
     document.getElementById("about").style.removeProperty("transform")
     document.getElementById("about").style.removeProperty("font-size")
     document.getElementById("about").style.removeProperty("left")
