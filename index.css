@@ -94,15 +94,8 @@ h1 {
 	transition: all 1s;
 }
 
-#social_media_wrapper {
-	display: flex;
-    justify-content: space-between;
-	width: 70%;
-	position: fixed;
-	left: 50%;
-	bottom: -50px;
-	transform: translate(-50%, +50%);
-	transition: all 1s;
+#youtube {
+	right: 70%;
 }
 
 #youtube_content {
@@ -112,6 +105,14 @@ h1 {
 	left: 50%;
 	transform: translateX(-50%)
 
+}
+
+#instagram {
+	right: 50%;
+}
+
+#github {
+	right: 30%;
 }
 
 .video {
@@ -133,11 +134,14 @@ h1 {
 }
 
 .social_media {
+	position: fixed;
+	top: 100%;
+	transform: translate(50%, -50%);
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
 	font-size: 30px;
-	text-align: center;
 	color: #E8911A;
+	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms;
 	background-image: linear-gradient( #E8911A, #E8911A);
 }
 
