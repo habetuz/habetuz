@@ -85,6 +85,7 @@ h1 {
 	left: 50%;
 	transform: translateX(-50%);
 	width: 50%;
+	text-align: justify;
 	transition: all 1s;
 }
 
@@ -142,17 +143,17 @@ h1 {
 }
 
 @media screen and (max-width: 780px){
-		#logo {
-			width: 80%;
-		}
+	#logo {
+		width: 80%;
+	}
 
-		#social_media_wrapper {
-			flex-direction: column;
-			height: 70%;
-			bottom: -100%;
-		}
+	#social_media_wrapper {
+		flex-direction: column;
+		height: 70%;
+		bottom: -100%;
+	}
 
-		#about_text {
-			width: 70%;
-		}
+	#about_text {
+		width: 70%;
+	}
 }
