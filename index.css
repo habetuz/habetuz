@@ -39,7 +39,7 @@ h1 {
 	transform: translate(-50%, -50%);
 	transform-origin: left top;
 	width: 50%;
-	transition: all 1s;
+	transition: left 1s, top 1s, width 1s, opacity 300ms;
 }
 
 #logo_disapear {
@@ -143,7 +143,7 @@ h1 {
 	font-weight: 600;
 	font-size: 30px;
 	color: #E8911A;
-	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms;
+	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms, opacity 300ms;
 	background-image: linear-gradient( #E8911A, #E8911A);
 }
 

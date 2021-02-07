@@ -15,6 +15,7 @@ document.getElementById("scroll_arrows").addEventListener('click', function() {
 document.getElementById("about").addEventListener("click", function() {
     if(aboutOpen) {
         hideAbout()
+        afterAboutHide()
     } else {
         showAbout()
     }
@@ -54,6 +55,23 @@ video.allowFullscreen = true
 video.frameBorder = 0
 
 loadUrl()
+
+window.onscroll = function() {
+    if(window.pageYOffset > 150) {
+        document.getElementById("logo").style.opacity = "0"
+        if(!aboutOpen) {
+            if(youtubeOpen) {
+                document.getElementById("instagram").style.opacity = "0"
+                document.getElementById("github").style.opacity = "0"
+            }
+        }
+    } else {
+        document.getElementById("logo").style.removeProperty("opacity")
+        
+        document.getElementById("instagram").style.removeProperty("opacity")
+        document.getElementById("github").style.removeProperty("opacity")
+    }
+}
 
 function scroll(event) {
     if(event.deltaY > 0 && !logoCollapsed) {
@@ -172,8 +190,6 @@ function hideAbout() {
     document.getElementById("about_text").style.removeProperty("top")
 
     aboutOpen = false
-
-    afterAboutHide()
 }
 
 function onAboutTransformationEnd() {
