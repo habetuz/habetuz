@@ -159,12 +159,6 @@ h1 {
 }
 
 .link {
-	color: #B1CBCA;
-	background-image: linear-gradient( #B1CBCA, #B1CBCA);
-	text-decoration: none;
-}
-
-.link_dark {
 	color: #E8911A;
 	background-image: linear-gradient( #E8911A, #E8911A);
 	text-decoration: none;

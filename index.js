@@ -1,7 +1,8 @@
 document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
 document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
-document.getElementById("youtube_content").addEventListener("transitionend", onYoutubeTransformationEnd)
+document.getElementById("youtube").addEventListener("transitionend", onYoutubeTransformationEnd)
 document.getElementById("instagram").addEventListener("transitionend", onInstagramTransformationEnd)
+document.getElementById("github").addEventListener("transitionend", onGithubTransformationEnd)
 
 document.getElementById("logo").addEventListener('click', function() {
     if(logoCollapsed) {
@@ -21,12 +22,40 @@ document.getElementById("about").addEventListener("click", function() {
         showAbout()
     }
 })
+document.getElementById("about_text_photography").addEventListener("click", function() {
+    hideAbout()
+    showInstagram()
+})
+document.getElementById("about_text_filming").addEventListener("click", function() {
+    hideAbout()
+    showYoutube()
+})
+document.getElementById("about_text_programming").addEventListener("click", function() {
+    hideAbout()
+    showGithub()
+})
 document.getElementById("youtube").addEventListener("click", function() {
     if(youtubeOpen) {
         hideYoutube()
         showSocialMedia()
     } else {
         showYoutube()
+    }
+})
+document.getElementById("instagram").addEventListener("click", function() {
+    if(instagramOpen) {
+        hideInstagram()
+        showSocialMedia()
+    } else {
+        showInstagram()
+    }
+})
+document.getElementById("github").addEventListener("click", function() {
+    if(githubOpen) {
+        hideGithub()
+        showSocialMedia()
+    } else {
+        showGithub()
     }
 })
 
@@ -40,6 +69,7 @@ var aboutOpen = false
 var socialMediaOpen = false
 var youtubeOpen = false
 var instagramOpen = false
+var githubOpen = false
 
 var youtubeLoaded = false
 
@@ -137,6 +167,8 @@ function hideAll() {
     if(aboutOpen) hideAbout()
     if(socialMediaOpen) hideSocialMedia()
     if(youtubeOpen) hideYoutube()
+    if(instagramOpen) hideInstagram()
+    if(githubOpen) hideGithub()
 }
 
 function showSocialMedia() {
@@ -173,6 +205,8 @@ function showAbout() {
     if      (!logoCollapsed)    afterAboutHide = expandLogo    
     else if (socialMediaOpen)   afterAboutHide = showSocialMedia
     else if (youtubeOpen)       afterAboutHide = showYoutube
+    else if (instagramOpen)     afterAboutHide = showInstagram
+    else if (githubOpen)        afterAboutHide = showGithub
     
     collapseLogo()
     hideAll()
@@ -258,7 +292,6 @@ function hideYoutube() {
 
     document.getElementById("youtube_content").style.removeProperty("top")
 
-    document.getElementById("youtube").style.removeProperty("visibility")
     document.getElementById("youtube").style.removeProperty("right")
     document.getElementById("youtube").style.removeProperty("top")
     document.getElementById("youtube").style.removeProperty("font-size")
@@ -278,22 +311,154 @@ function hideYoutube() {
 
 function onYoutubeTransformationEnd() {
     if(!youtubeOpen) {
-        document.getElementById("youtube_content").style.removeProperty("position")
-        document.getElementById("youtube").style.removeProperty("position")
+        if(githubOpen || instagramOpen) {
+            document.getElementById("youtube_content").style.removeProperty("position")
+            document.getElementById("youtube").style.removeProperty("position")
+        }
+        
     }
 }
 
 function showInstagram() {
+    pushState("instagram")
+    hideAll()
 
+    /*
+    if(!youtubeLoaded) {
+        videoSources.forEach(source => {
+            var copy = video.cloneNode(true)
+            copy.src = source
+            document.getElementById("youtube_content").appendChild(copy)
+        })
+        youtubeLoaded = true
+    }
+    */
+
+    Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+        element.style.visibility = "visible"
+    });
+
+    /*
+    document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
+    document.getElementById("youtube_content").style.position = "absolute"
+    */
+   
+    document.getElementById("instagram").style.right = "50%"
+    document.getElementById("instagram").style.top = "30%"
+    document.getElementById("instagram").style.fontSize = "50px"
+    document.getElementById("instagram").style.position = "absolute"
+    if(window.innerWidth < 780) document.getElementById("instagram").style.backgroundSize = "100% 3px"
+
+    document.getElementById("youtube").style.transform = "translate(0, 0)"
+    document.getElementById("youtube").style.top = "10px"
+    document.getElementById("youtube").style.right = "10px"
+    document.getElementById("youtube").style.fontSize = "20px"
+
+    document.getElementById("github").style.transform = "translate(0, 150%)"
+    document.getElementById("github").style.top = "10px"
+    document.getElementById("github").style.right = "10px"
+    document.getElementById("github").style.fontSize = "20px"
+
+    instagramOpen = true
 }
 
 function hideInstagram() {
+    document.documentElement.scrollTop = 0;
 
+    //document.getElementById("youtube_content").style.removeProperty("top")
+
+    document.getElementById("instagram").style.removeProperty("right")
+    document.getElementById("instagram").style.removeProperty("top")
+    document.getElementById("instagram").style.removeProperty("font-size")
+    document.getElementById("instagram").style.removeProperty("background-size")
+
+    document.getElementById("youtube").style.removeProperty("transform")
+    document.getElementById("youtube").style.removeProperty("top")
+    document.getElementById("youtube").style.removeProperty("right")
+    document.getElementById("youtube").style.removeProperty("font-size")
+
+    document.getElementById("github").style.removeProperty("transform")
+    document.getElementById("github").style.removeProperty("top")
+    document.getElementById("github").style.removeProperty("right")
+    document.getElementById("github").style.removeProperty("font-size")
+    instagramOpen = false
 }
 
 function onInstagramTransformationEnd() {
     if(!instagramOpen) {
-        if(!youtubeOpen && !socialMediaOpen) {onSocialMediaTransformationEnd(); return}
+        if(!youtubeOpen && !githubOpen && !socialMediaOpen) {onSocialMediaTransformationEnd(); return}
+        //document.getElementById("youtube_content").style.removeProperty("position")
+        if(youtubeOpen || githubOpen) document.getElementById("instagram").style.removeProperty("position")
+    }
+}
+
+function showGithub() {
+    pushState("github")
+    hideAll()
+
+    /*
+    if(!youtubeLoaded) {
+        videoSources.forEach(source => {
+            var copy = video.cloneNode(true)
+            copy.src = source
+            document.getElementById("youtube_content").appendChild(copy)
+        })
+        youtubeLoaded = true
+    }
+    */
+    Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+        element.style.visibility = "visible"
+    });
+    /*
+    document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
+    document.getElementById("youtube_content").style.position = "absolute"
+    */
+
+    document.getElementById("github").style.right = "50%"
+    document.getElementById("github").style.top = "30%"
+    document.getElementById("github").style.fontSize = "50px"
+    document.getElementById("github").style.position = "absolute"
+    if(window.innerWidth < 780) document.getElementById("github").style.backgroundSize = "100% 3px"
+
+    document.getElementById("youtube").style.transform = "translate(0, 0)"
+    document.getElementById("youtube").style.top = "10px"
+    document.getElementById("youtube").style.right = "10px"
+    document.getElementById("youtube").style.fontSize = "20px"
+
+    document.getElementById("instagram").style.transform = "translate(0, 150%)"
+    document.getElementById("instagram").style.top = "10px"
+    document.getElementById("instagram").style.right = "10px"
+    document.getElementById("instagram").style.fontSize = "20px"
+
+    githubOpen = true
+}
+
+function hideGithub() {
+    document.documentElement.scrollTop = 0;
+
+    //document.getElementById("youtube_content").style.removeProperty("top")
+
+    document.getElementById("github").style.removeProperty("right")
+    document.getElementById("github").style.removeProperty("top")
+    document.getElementById("github").style.removeProperty("font-size")
+    document.getElementById("github").style.removeProperty("background-size")
+
+    document.getElementById("instagram").style.removeProperty("transform")
+    document.getElementById("instagram").style.removeProperty("top")
+    document.getElementById("instagram").style.removeProperty("right")
+    document.getElementById("instagram").style.removeProperty("font-size")
+
+    document.getElementById("youtube").style.removeProperty("transform")
+    document.getElementById("youtube").style.removeProperty("top")
+    document.getElementById("youtube").style.removeProperty("right")
+    document.getElementById("youtube").style.removeProperty("font-size")
+    githubOpen = false
+}
+
+function onGithubTransformationEnd() {
+    if(!githubOpen) {
+        //document.getElementById("youtube_content").style.removeProperty("position")
+        if(youtubeOpen || instagramOpen) document.getElementById("github").style.removeProperty("position")
     }
 }
 
@@ -310,6 +475,12 @@ function loadUrl() {
             collapseLogo()
             showYoutube()
             break
+        case "instagram":
+            collapseLogo()
+            showInstagram()
+        case "github":
+            collapseLogo()
+            showGithub()
         default:
             window.location.replace(window.location.pathname)
     }
