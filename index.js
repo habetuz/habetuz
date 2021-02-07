@@ -30,6 +30,9 @@ document.getElementById("youtube").addEventListener("click", function() {
 })
 
 document.addEventListener("wheel", scroll)
+window.addEventListener("resize", function(event) {
+    if(socialMediaOpen) showSocialMedia()
+})
 
 var logoCollapsed = false
 var aboutOpen = false
@@ -67,7 +70,7 @@ window.onscroll = function() {
         }
     } else {
         document.getElementById("logo").style.removeProperty("opacity")
-        
+
         document.getElementById("instagram").style.removeProperty("opacity")
         document.getElementById("github").style.removeProperty("opacity")
     }
@@ -136,7 +139,7 @@ function hideAll() {
 
 function showSocialMedia() {
     pushState("")
-    if(window.innerWidth > 780) Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+    if(window.innerWidth > 1000) Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.top = "50%"
     });
 
@@ -281,9 +284,12 @@ function loadUrl() {
 }
 
 function pushState(state) {
-    if(state == "") {
-        window.history.replaceState("start", "", " ")
-        return
+    console.log(state)
+    if( window.history.state != state) {
+        if(state == "" && window.history.state != "start") {
+            window.history.replaceState("start", "", " ")
+            return
+        }
+        window.history.replaceState(state, "", "#" + state)
     }
-    window.history.replaceState(state, "", "#" + state)
 }

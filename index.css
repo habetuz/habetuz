@@ -173,18 +173,6 @@ h1 {
 		width: 80%;
 	}
 
-	#youtube {
-		right: 50%;
-	}
-
-	#instagram {
-		right: 50%;
-	}
-
-	#github {
-		right: 50%;
-	}
-
 	#about_text {
 		width: 70%;
 	}
@@ -201,6 +189,20 @@ h1 {
 	}
 
 	
+}
+
+@media screen and (max-width: 1000px) {
+	#youtube {
+		right: 50%;
+	}
+
+	#instagram {
+		right: 50%;
+	}
+
+	#github {
+		right: 50%;
+	}
 }
 
 @media screen and (min-width: 780px) and (max-width: 1450px) {
