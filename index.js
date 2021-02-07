@@ -146,7 +146,7 @@ function showSocialMedia() {
         element.style.visibility = "visible"
     });
 
-    if(!window.innerWidth > 1000) {
+    if(window.innerWidth <= 1000) {
         document.getElementById("youtube").style.top = "30%"
         document.getElementById("instagram").style.top = "50%"
         document.getElementById("github").style.top = "70%"
