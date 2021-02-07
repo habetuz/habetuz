@@ -1,6 +1,7 @@
 document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
 document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
 document.getElementById("youtube_content").addEventListener("transitionend", onYoutubeTransformationEnd)
+document.getElementById("instagram").addEventListener("transitionend", onInstagramTransformationEnd)
 
 document.getElementById("logo").addEventListener('click', function() {
     if(logoCollapsed) {
@@ -38,6 +39,7 @@ var logoCollapsed = false
 var aboutOpen = false
 var socialMediaOpen = false
 var youtubeOpen = false
+var instagramOpen = false
 
 var youtubeLoaded = false
 
@@ -139,11 +141,12 @@ function hideAll() {
 
 function showSocialMedia() {
     pushState("")
-    if(window.innerWidth > 1000) Array.from(document.getElementsByClassName("social_media")).forEach(element => {
-        element.style.top = "50%"
+    Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+        if(window.innerWidth > 1000) element.style.top = "50%"
+        element.style.visibility = "visible"
     });
 
-    else {
+    if(!window.innerWidth > 1000) {
         document.getElementById("youtube").style.top = "30%"
         document.getElementById("instagram").style.top = "50%"
         document.getElementById("github").style.top = "70%"
@@ -156,6 +159,12 @@ function hideSocialMedia() {
         element.style.removeProperty("top")
     });
     socialMediaOpen = false;
+}
+
+function onSocialMediaTransformationEnd() {
+    Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+        element.style.removeProperty("visibility")
+    });
 }
 
 function showAbout() {
@@ -175,6 +184,7 @@ function showAbout() {
     document.getElementById("about").style.bottom = "70%"
     if(window.innerWidth < 780) document.getElementById("about").style.backgroundSize = "100% 3px"
 
+    document.getElementById("about_text").style.visibility = "visible"
     document.getElementById("about_text").style.position = "absolute"
     document.getElementById("about_text").style.top = "30%"
 
@@ -198,6 +208,8 @@ function hideAbout() {
 function onAboutTransformationEnd() {
     if(!aboutOpen) {
         document.getElementById("about").style.removeProperty("position")
+
+        document.getElementById("about_text").style.removeProperty("visibility")
         document.getElementById("about_text").style.removeProperty("position")
     }
 }
@@ -214,6 +226,11 @@ function showYoutube() {
         })
         youtubeLoaded = true
     }
+
+    Array.from(document.getElementsByClassName("social_media")).forEach(element => {
+        element.style.visibility = "visible"
+    });
+
     document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
     document.getElementById("youtube_content").style.position = "absolute"
 
@@ -241,6 +258,7 @@ function hideYoutube() {
 
     document.getElementById("youtube_content").style.removeProperty("top")
 
+    document.getElementById("youtube").style.removeProperty("visibility")
     document.getElementById("youtube").style.removeProperty("right")
     document.getElementById("youtube").style.removeProperty("top")
     document.getElementById("youtube").style.removeProperty("font-size")
@@ -265,6 +283,20 @@ function onYoutubeTransformationEnd() {
     }
 }
 
+function showInstagram() {
+
+}
+
+function hideInstagram() {
+
+}
+
+function onInstagramTransformationEnd() {
+    if(!instagramOpen) {
+        if(!youtubeOpen && !socialMediaOpen) {onSocialMediaTransformationEnd(); return}
+    }
+}
+
 function loadUrl() {
     var anchor = document.URL.split('#')[1]
     if(anchor == null) return
@@ -284,10 +316,10 @@ function loadUrl() {
 }
 
 function pushState(state) {
-    console.log(state)
     if( window.history.state != state) {
-        if(state == "" && window.history.state != "start") {
-            window.history.replaceState("start", "", " ")
+        //console.log(state + " | " + window.history.state)
+        if(state == "") {
+            if(window.history.state != "start") window.history.replaceState("start", "", " ")
             return
         }
         window.history.replaceState(state, "", "#" + state)

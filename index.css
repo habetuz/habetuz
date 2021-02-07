@@ -80,6 +80,7 @@ h1 {
 }
 
 #about_text {
+	visibility: hidden;
 	font-family: 'Montserrat', serif;
 	font-weight: normal;
 	font-size: 20px;
@@ -136,6 +137,7 @@ h1 {
 }
 
 .social_media {
+	visibility: hidden;
 	position: fixed;
 	top: 100%;
 	transform: translate(50%, -50%);
