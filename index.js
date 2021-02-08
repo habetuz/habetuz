@@ -332,7 +332,7 @@ function showInstagram() {
     hideAll()
 
     if(!instagramLoaded) {
-        for(var i = picuresIndexOffset; i < picuresIndexOffset +12; i++ ) {
+        for(var i = picuresIndexOffset +12 -1; i > 0; i-- ) {
             var image = document.createElement("img")
             image.classList.add("image")
             image.src = "pictures/" + i + ".jpg"
