@@ -62,7 +62,10 @@ document.getElementById("github").addEventListener("click", function() {
 document.addEventListener("wheel", scroll)
 window.addEventListener("resize", function(event) {
     if(socialMediaOpen) showSocialMedia()
+    if(instagramOpen) evaluateImgHeight()
 })
+
+var picuresIndexOffset = 1
 
 var logoCollapsed = false
 var aboutOpen = false
@@ -70,8 +73,10 @@ var socialMediaOpen = false
 var youtubeOpen = false
 var instagramOpen = false
 var githubOpen = false
+var instagramOpen = false
 
 var youtubeLoaded = false
+var instagramLoaded = false
 
 var afterAboutHide
 
@@ -95,10 +100,9 @@ window.onscroll = function() {
     if(window.pageYOffset > 150) {
         document.getElementById("logo").style.opacity = "0"
         if(!aboutOpen) {
-            if(youtubeOpen) {
-                document.getElementById("instagram").style.opacity = "0"
-                document.getElementById("github").style.opacity = "0"
-            }
+            if(!youtubeOpen)    document.getElementById("youtube").style.opacity = "0"
+            if(!instagramOpen)  document.getElementById("instagram").style.opacity = "0"
+            if(!githubOpen)     document.getElementById("github").style.opacity = "0"
         }
     } else {
         document.getElementById("logo").style.removeProperty("opacity")
@@ -326,25 +330,25 @@ function showInstagram() {
     pushState("instagram")
     hideAll()
 
-    /*
-    if(!youtubeLoaded) {
-        videoSources.forEach(source => {
-            var copy = video.cloneNode(true)
-            copy.src = source
-            document.getElementById("youtube_content").appendChild(copy)
-        })
-        youtubeLoaded = true
+    if(!instagramLoaded) {
+        for(var i = picuresIndexOffset +12 -1; i > 0; i-- ) {
+            var image = document.createElement("img")
+            image.classList.add("image")
+            image.src = "pictures/" + i + ".jpg"
+            document.getElementById("instagram_content").appendChild(image)
+        }
+        instagramLoaded = true
+        document.getElementById("instagram_content").children[0].onload = evaluateImgHeight
     }
-    */
 
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.visibility = "visible"
     });
 
-    /*
-    document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
-    document.getElementById("youtube_content").style.position = "absolute"
-    */
+    evaluateImgHeight()
+    
+    document.getElementById("instagram_content").style.top = "calc(30% + 100px)"
+    document.getElementById("instagram_content").style.position = "absolute"
    
     document.getElementById("instagram").style.right = "50%"
     document.getElementById("instagram").style.top = "30%"
@@ -368,7 +372,7 @@ function showInstagram() {
 function hideInstagram() {
     document.documentElement.scrollTop = 0;
 
-    //document.getElementById("youtube_content").style.removeProperty("top")
+    document.getElementById("instagram_content").style.removeProperty("top")
 
     document.getElementById("instagram").style.removeProperty("right")
     document.getElementById("instagram").style.removeProperty("top")
@@ -389,10 +393,15 @@ function hideInstagram() {
 
 function onInstagramTransformationEnd() {
     if(!instagramOpen) {
-        if(!youtubeOpen && !githubOpen && !socialMediaOpen) {onSocialMediaTransformationEnd(); return}
-        //document.getElementById("youtube_content").style.removeProperty("position")
+        console.log("instagram is closed")
+        if(!youtubeOpen && !githubOpen && !socialMediaOpen) onSocialMediaTransformationEnd()
         if(youtubeOpen || githubOpen) document.getElementById("instagram").style.removeProperty("position")
+        document.getElementById("instagram_content").style.removeProperty("position")
     }
+}
+
+function evaluateImgHeight() {
+    document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].clientHeight/2) + "px)"
 }
 
 function showGithub() {
