@@ -194,9 +194,13 @@ function hideSocialMedia() {
 }
 
 function onSocialMediaTransformationEnd() {
+    console.log("socialMediaTransformationEnd")
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.removeProperty("visibility")
+        element.style.removeProperty("position")
     });
+    document.getElementById("youtube_content").style.removeProperty("visibility")
+    document.getElementById("youtube_content").style.removeProperty("position")
 }
 
 function showAbout() {
@@ -315,7 +319,6 @@ function onYoutubeTransformationEnd() {
             document.getElementById("youtube_content").style.removeProperty("position")
             document.getElementById("youtube").style.removeProperty("position")
         }
-        
     }
 }
 
