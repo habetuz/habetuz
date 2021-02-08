@@ -213,7 +213,7 @@ function showAbout() {
 
     document.getElementById("about").style.position = "absolute"
     document.getElementById("about").style.transform = "translate(-50%,50%)"
-    document.getElementById("about").style.fontSize = "30px"
+    document.getElementById("about").style.fontSize = "50px"
     document.getElementById("about").style.left = "50%"
     document.getElementById("about").style.bottom = "70%"
     if(window.innerWidth < 780) document.getElementById("about").style.backgroundSize = "100% 3px"
