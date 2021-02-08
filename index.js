@@ -478,9 +478,11 @@ function loadUrl() {
         case "instagram":
             collapseLogo()
             showInstagram()
+            break
         case "github":
             collapseLogo()
             showGithub()
+            break
         default:
             window.location.replace(window.location.pathname)
     }
