@@ -64,12 +64,15 @@ window.addEventListener("resize", function(event) {
     if(socialMediaOpen) showSocialMedia()
 })
 
+var picuresIndexOffset = 1
+
 var logoCollapsed = false
 var aboutOpen = false
 var socialMediaOpen = false
 var youtubeOpen = false
 var instagramOpen = false
 var githubOpen = false
+var instagramOpen = false
 
 var youtubeLoaded = false
 
@@ -326,16 +329,10 @@ function showInstagram() {
     pushState("instagram")
     hideAll()
 
-    /*
-    if(!youtubeLoaded) {
-        videoSources.forEach(source => {
-            var copy = video.cloneNode(true)
-            copy.src = source
-            document.getElementById("youtube_content").appendChild(copy)
-        })
+    if(!instagramLoaded) {
+        for(int i )
         youtubeLoaded = true
     }
-    */
 
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.visibility = "visible"

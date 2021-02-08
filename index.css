@@ -107,11 +107,20 @@ h1 {
 	padding-bottom: 64px;
 	transition: top 1s;
 	transform: translateX(-50%)
-
 }
 
 #instagram {
 	right: 50%;
+}
+
+#instagram_content {
+	position: fixed;
+	width: 80%;
+	top: 100%;
+	left: 50%;
+	padding-bottom: 64px;
+	transition: top 1s;
+	transform: translateX(-50%)
 }
 
 #github {
@@ -174,6 +183,10 @@ h1 {
 	}
 
 	#youtube_content {
+		width: 70%;
+	}
+
+	#instagram_content {
 		width: 70%;
 	}
 
