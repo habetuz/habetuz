@@ -100,10 +100,9 @@ window.onscroll = function() {
     if(window.pageYOffset > 150) {
         document.getElementById("logo").style.opacity = "0"
         if(!aboutOpen) {
-            if(youtubeOpen) {
-                document.getElementById("instagram").style.opacity = "0"
-                document.getElementById("github").style.opacity = "0"
-            }
+            if(!youtubeOpen)    document.getElementById("youtube").style.opacity = "0"
+            if(!instagramOpen)  document.getElementById("instagram").style.opacity = "0"
+            if(!githubOpen)     document.getElementById("github").style.opacity = "0"
         }
     } else {
         document.getElementById("logo").style.removeProperty("opacity")
