@@ -1,2 +1,2 @@
 # me
-My personal [website](https://habetuz.github.io/me)
+My personal [website](https://hello.marvin-fuchs.de)
