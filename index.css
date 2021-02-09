@@ -207,6 +207,8 @@ h1 {
 		padding-left: 0;
 		padding-right: 0;
 		width: 100%;
+		transform-origin: center;
+		transition: transform 500ms;
 	}
 }
 
