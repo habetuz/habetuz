@@ -205,8 +205,8 @@ h1 {
 	}
 
 	.image {
-		padding-left: 0;
-		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
 		width: 100%;
 		transition: transform 500ms;
 	}

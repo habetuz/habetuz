@@ -63,6 +63,7 @@ document.addEventListener("wheel", scroll)
 window.addEventListener("resize", function (event) {
     if (socialMediaOpen) showSocialMedia()
     if (instagramOpen) evaluateImgHeight()
+    onScroll()
 })
 
 
@@ -96,8 +97,10 @@ video.frameBorder = 0
 
 loadUrl()
 
-window.onscroll = function () {
-    if (window.pageYOffset > 150) {
+window.onscroll = onScroll
+function onScroll() {
+    
+    if (window.pageYOffset > 150 && window.innerWidth < 800) {
         document.getElementById("logo").style.opacity = "0"
         if (!aboutOpen) {
             if (!youtubeOpen) document.getElementById("youtube").style.opacity = "0"
@@ -110,6 +113,7 @@ window.onscroll = function () {
         document.getElementById("instagram").style.removeProperty("opacity")
         document.getElementById("github").style.removeProperty("opacity")
     }
+    
 }
 
 function scroll(event) {
