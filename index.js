@@ -65,6 +65,8 @@ window.addEventListener("resize", function (event) {
     if (instagramOpen) evaluateImgHeight()
 })
 
+
+
 var picuresIndexOffset = 1
 
 var logoCollapsed = false
@@ -77,10 +79,6 @@ var instagramOpen = false
 
 var youtubeLoaded = false
 var instagramLoaded = false
-
-var afterAboutHide
-
-var activeImage
 
 var videoSources = [
     "https://www.youtube-nocookie.com/embed/-i2GwcvDA1s",
@@ -408,11 +406,11 @@ function evaluateImgHeight() {
 }
 
 function mouseOverImage(event) {
-    activeImage = event.target
+    //event.target.style.transform = "translateY(50%) scale(1.1) rotate(10deg)"
 }
 
 function mouseOutImage(event) {
-    if(activeImage === event.target) activeImage = null
+    //event.target.style.removeProperty("transform")
 }
 
 function showGithub() {
