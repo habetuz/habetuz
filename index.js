@@ -108,7 +108,7 @@ window.onscroll = function () {
         }
     } else {
         document.getElementById("logo").style.removeProperty("opacity")
-
+        document.getElementById("youtube").style.removeProperty("opacity")
         document.getElementById("instagram").style.removeProperty("opacity")
         document.getElementById("github").style.removeProperty("opacity")
     }
