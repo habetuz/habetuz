@@ -4,54 +4,54 @@ document.getElementById("youtube").addEventListener("transitionend", onYoutubeTr
 document.getElementById("instagram").addEventListener("transitionend", onInstagramTransformationEnd)
 document.getElementById("github").addEventListener("transitionend", onGithubTransformationEnd)
 
-document.getElementById("logo").addEventListener('click', function() {
-    if(logoCollapsed) {
+document.getElementById("logo").addEventListener('click', function () {
+    if (logoCollapsed) {
         hideAll()
         expandLogo()
     }
 })
-document.getElementById("scroll_arrows").addEventListener('click', function() {
+document.getElementById("scroll_arrows").addEventListener('click', function () {
     collapseLogo()
     showSocialMedia()
 })
-document.getElementById("about").addEventListener("click", function() {
-    if(aboutOpen) {
+document.getElementById("about").addEventListener("click", function () {
+    if (aboutOpen) {
         hideAbout()
         afterAboutHide()
     } else {
         showAbout()
     }
 })
-document.getElementById("about_text_photography").addEventListener("click", function() {
+document.getElementById("about_text_photography").addEventListener("click", function () {
     hideAbout()
     showInstagram()
 })
-document.getElementById("about_text_filming").addEventListener("click", function() {
+document.getElementById("about_text_filming").addEventListener("click", function () {
     hideAbout()
     showYoutube()
 })
-document.getElementById("about_text_programming").addEventListener("click", function() {
+document.getElementById("about_text_programming").addEventListener("click", function () {
     hideAbout()
     showGithub()
 })
-document.getElementById("youtube").addEventListener("click", function() {
-    if(youtubeOpen) {
+document.getElementById("youtube").addEventListener("click", function () {
+    if (youtubeOpen) {
         hideYoutube()
         showSocialMedia()
     } else {
         showYoutube()
     }
 })
-document.getElementById("instagram").addEventListener("click", function() {
-    if(instagramOpen) {
+document.getElementById("instagram").addEventListener("click", function () {
+    if (instagramOpen) {
         hideInstagram()
         showSocialMedia()
     } else {
         showInstagram()
     }
 })
-document.getElementById("github").addEventListener("click", function() {
-    if(githubOpen) {
+document.getElementById("github").addEventListener("click", function () {
+    if (githubOpen) {
         hideGithub()
         showSocialMedia()
     } else {
@@ -60,9 +60,9 @@ document.getElementById("github").addEventListener("click", function() {
 })
 
 document.addEventListener("wheel", scroll)
-window.addEventListener("resize", function(event) {
-    if(socialMediaOpen) showSocialMedia()
-    if(instagramOpen) evaluateImgHeight()
+window.addEventListener("resize", function (event) {
+    if (socialMediaOpen) showSocialMedia()
+    if (instagramOpen) evaluateImgHeight()
 })
 
 var picuresIndexOffset = 1
@@ -80,6 +80,8 @@ var instagramLoaded = false
 
 var afterAboutHide
 
+var activeImage
+
 var videoSources = [
     "https://www.youtube-nocookie.com/embed/-i2GwcvDA1s",
     "https://www.youtube-nocookie.com/embed/k5O2HBL-euw",
@@ -96,13 +98,13 @@ video.frameBorder = 0
 
 loadUrl()
 
-window.onscroll = function() {
-    if(window.pageYOffset > 150) {
+window.onscroll = function () {
+    if (window.pageYOffset > 150) {
         document.getElementById("logo").style.opacity = "0"
-        if(!aboutOpen) {
-            if(!youtubeOpen)    document.getElementById("youtube").style.opacity = "0"
-            if(!instagramOpen)  document.getElementById("instagram").style.opacity = "0"
-            if(!githubOpen)     document.getElementById("github").style.opacity = "0"
+        if (!aboutOpen) {
+            if (!youtubeOpen) document.getElementById("youtube").style.opacity = "0"
+            if (!instagramOpen) document.getElementById("instagram").style.opacity = "0"
+            if (!githubOpen) document.getElementById("github").style.opacity = "0"
         }
     } else {
         document.getElementById("logo").style.removeProperty("opacity")
@@ -113,76 +115,76 @@ window.onscroll = function() {
 }
 
 function scroll(event) {
-    if(event.deltaY > 0 && !logoCollapsed) {
+    if (event.deltaY > 0 && !logoCollapsed) {
         collapseLogo()
         showSocialMedia()
-    } else if(event.deltaY < 0 && socialMediaOpen) {
+    } else if (event.deltaY < 0 && socialMediaOpen) {
         expandLogo()
         hideSocialMedia()
     }
 }
 
 function collapseLogo() {
-    if(!logoCollapsed) {
+    if (!logoCollapsed) {
         document.getElementById("logo_disapear").style.opacity = "0";
         document.getElementById("logo_disapear").style.transitionDelay = "0s"
-    
+
         document.getElementById("logo_H").style.transform = "translate(" + -452.5 + "px, " + 0.5 + "px)"
-    
+
         document.getElementById("logo").style.left = 170 + "px"
         document.getElementById("logo").style.top = 50 + "px"
         document.getElementById("logo").style.width = "300px"
-    
+
         document.getElementById("scroll_arrows").style.transitionDelay = ("0s")
         document.getElementById("scroll_arrows").style.transform = "translate(-50%, -500px) scale(0)"
-        
+
         logoCollapsed = true
     }
 }
 
 function expandLogo() {
-    if(logoCollapsed) {
+    if (logoCollapsed) {
         pushState("")
 
         document.getElementById("logo_disapear").style.removeProperty("opacity")
         document.getElementById("logo_disapear").style.removeProperty("transition")
-    
+
         document.getElementById("logo_H").style.removeProperty("transform")
-    
+
         document.getElementById("logo").style.removeProperty("left")
         document.getElementById("logo").style.removeProperty("top")
         document.getElementById("logo").style.removeProperty("width")
-    
+
         document.getElementById("scroll_arrows").style.transitionDelay = ("0.5s")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
-    
+
         logoCollapsed = false;
     }
 }
 
 function onLogoTransformationEnd() {
-    if(!logoCollapsed) {
+    if (!logoCollapsed) {
         document.getElementById("scroll_arrows").style.removeProperty("transition-delay")
         document.getElementById("scroll_arrows").style.removeProperty("transform")
     }
 }
 
 function hideAll() {
-    if(aboutOpen) hideAbout()
-    if(socialMediaOpen) hideSocialMedia()
-    if(youtubeOpen) hideYoutube()
-    if(instagramOpen) hideInstagram()
-    if(githubOpen) hideGithub()
+    if (aboutOpen) hideAbout()
+    if (socialMediaOpen) hideSocialMedia()
+    if (youtubeOpen) hideYoutube()
+    if (instagramOpen) hideInstagram()
+    if (githubOpen) hideGithub()
 }
 
 function showSocialMedia() {
     pushState("")
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
-        if(window.innerWidth > 1000) element.style.top = "50%"
+        if (window.innerWidth > 1000) element.style.top = "50%"
         element.style.visibility = "visible"
     });
 
-    if(window.innerWidth <= 1000) {
+    if (window.innerWidth <= 1000) {
         document.getElementById("youtube").style.top = "30%"
         document.getElementById("instagram").style.top = "50%"
         document.getElementById("github").style.top = "70%"
@@ -209,13 +211,13 @@ function onSocialMediaTransformationEnd() {
 
 function showAbout() {
     pushState("about")
-  
-    if      (!logoCollapsed)    afterAboutHide = expandLogo    
-    else if (socialMediaOpen)   afterAboutHide = showSocialMedia
-    else if (youtubeOpen)       afterAboutHide = showYoutube
-    else if (instagramOpen)     afterAboutHide = showInstagram
-    else if (githubOpen)        afterAboutHide = showGithub
-    
+
+    if (!logoCollapsed) afterAboutHide = expandLogo
+    else if (socialMediaOpen) afterAboutHide = showSocialMedia
+    else if (youtubeOpen) afterAboutHide = showYoutube
+    else if (instagramOpen) afterAboutHide = showInstagram
+    else if (githubOpen) afterAboutHide = showGithub
+
     collapseLogo()
     hideAll()
 
@@ -224,7 +226,7 @@ function showAbout() {
     document.getElementById("about").style.fontSize = "50px"
     document.getElementById("about").style.left = "50%"
     document.getElementById("about").style.bottom = "70%"
-    if(window.innerWidth < 780) document.getElementById("about").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("about").style.backgroundSize = "100% 3px"
 
     document.getElementById("about_text").style.visibility = "visible"
     document.getElementById("about_text").style.position = "absolute"
@@ -248,7 +250,7 @@ function hideAbout() {
 }
 
 function onAboutTransformationEnd() {
-    if(!aboutOpen) {
+    if (!aboutOpen) {
         document.getElementById("about").style.removeProperty("position")
 
         document.getElementById("about_text").style.removeProperty("visibility")
@@ -260,7 +262,7 @@ function showYoutube() {
     pushState("youtube")
     hideAll()
 
-    if(!youtubeLoaded) {
+    if (!youtubeLoaded) {
         videoSources.forEach(source => {
             var copy = video.cloneNode(true)
             copy.src = source
@@ -280,7 +282,7 @@ function showYoutube() {
     document.getElementById("youtube").style.top = "30%"
     document.getElementById("youtube").style.fontSize = "50px"
     document.getElementById("youtube").style.position = "absolute"
-    if(window.innerWidth < 780) document.getElementById("youtube").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("youtube").style.backgroundSize = "100% 3px"
 
     document.getElementById("instagram").style.transform = "translate(0, 0)"
     document.getElementById("instagram").style.top = "10px"
@@ -318,8 +320,8 @@ function hideYoutube() {
 }
 
 function onYoutubeTransformationEnd() {
-    if(!youtubeOpen) {
-        if(githubOpen || instagramOpen) {
+    if (!youtubeOpen) {
+        if (githubOpen || instagramOpen) {
             document.getElementById("youtube_content").style.removeProperty("position")
             document.getElementById("youtube").style.removeProperty("position")
         }
@@ -330,11 +332,13 @@ function showInstagram() {
     pushState("instagram")
     hideAll()
 
-    if(!instagramLoaded) {
-        for(var i = picuresIndexOffset +12 -1; i > 0; i-- ) {
+    if (!instagramLoaded) {
+        for (var i = picuresIndexOffset + 12 - 1; i > 0; i--) {
             var image = document.createElement("img")
             image.classList.add("image")
             image.src = "pictures/" + i + ".jpg"
+            image.onmouseover = mouseOverImage
+            image.onmouseout = mouseOutImage
             document.getElementById("instagram_content").appendChild(image)
         }
         instagramLoaded = true
@@ -346,15 +350,15 @@ function showInstagram() {
     });
 
     evaluateImgHeight()
-    
+
     document.getElementById("instagram_content").style.top = "calc(30% + 100px)"
     document.getElementById("instagram_content").style.position = "absolute"
-   
+
     document.getElementById("instagram").style.right = "50%"
     document.getElementById("instagram").style.top = "30%"
     document.getElementById("instagram").style.fontSize = "50px"
     document.getElementById("instagram").style.position = "absolute"
-    if(window.innerWidth < 780) document.getElementById("instagram").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("instagram").style.backgroundSize = "100% 3px"
 
     document.getElementById("youtube").style.transform = "translate(0, 0)"
     document.getElementById("youtube").style.top = "10px"
@@ -392,16 +396,23 @@ function hideInstagram() {
 }
 
 function onInstagramTransformationEnd() {
-    if(!instagramOpen) {
-        console.log("instagram is closed")
-        if(!youtubeOpen && !githubOpen && !socialMediaOpen) onSocialMediaTransformationEnd()
-        if(youtubeOpen || githubOpen) document.getElementById("instagram").style.removeProperty("position")
+    if (!instagramOpen) {
+        if (!youtubeOpen && !githubOpen && !socialMediaOpen) onSocialMediaTransformationEnd()
+        if (youtubeOpen || githubOpen) document.getElementById("instagram").style.removeProperty("position")
         document.getElementById("instagram_content").style.removeProperty("position")
     }
 }
 
 function evaluateImgHeight() {
-    document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].clientHeight/2) + "px)"
+    document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].clientHeight / 2) + "px)"
+}
+
+function mouseOverImage(event) {
+    activeImage = event.target
+}
+
+function mouseOutImage(event) {
+    if(activeImage === event.target) activeImage = null
 }
 
 function showGithub() {
@@ -430,7 +441,7 @@ function showGithub() {
     document.getElementById("github").style.top = "30%"
     document.getElementById("github").style.fontSize = "50px"
     document.getElementById("github").style.position = "absolute"
-    if(window.innerWidth < 780) document.getElementById("github").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("github").style.backgroundSize = "100% 3px"
 
     document.getElementById("youtube").style.transform = "translate(0, 0)"
     document.getElementById("youtube").style.top = "10px"
@@ -468,17 +479,17 @@ function hideGithub() {
 }
 
 function onGithubTransformationEnd() {
-    if(!githubOpen) {
+    if (!githubOpen) {
         //document.getElementById("youtube_content").style.removeProperty("position")
-        if(youtubeOpen || instagramOpen) document.getElementById("github").style.removeProperty("position")
+        if (youtubeOpen || instagramOpen) document.getElementById("github").style.removeProperty("position")
     }
 }
 
 function loadUrl() {
     var anchor = document.URL.split('#')[1]
-    if(anchor == null) return
+    if (anchor == null) return
 
-    switch(anchor) {
+    switch (anchor) {
         case "about":
             showAbout()
             afterAboutHide = expandLogo
@@ -501,10 +512,10 @@ function loadUrl() {
 }
 
 function pushState(state) {
-    if( window.history.state != state) {
+    if (window.history.state != state) {
         //console.log(state + " | " + window.history.state)
-        if(state == "") {
-            if(window.history.state != "start") window.history.replaceState("start", "", " ")
+        if (state == "") {
+            if (window.history.state != "start") window.history.replaceState("start", "", " ")
             return
         }
         window.history.replaceState(state, "", "#" + state)
