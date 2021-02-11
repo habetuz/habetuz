@@ -294,7 +294,7 @@ function showYoutube() {
     document.getElementById("instagram").style.right = "10px"
     document.getElementById("instagram").style.fontSize = "20px"
 
-    document.getElementById("github").style.transform = "translate(0, 50%) scale(0.6)"
+    document.getElementById("github").style.transform = "translate(0, 60%) scale(0.6)"
     document.getElementById("github").style.top = "10px"
     document.getElementById("github").style.right = "10px"
     document.getElementById("github").style.fontSize = "20px"
@@ -374,7 +374,7 @@ function showInstagram() {
     document.getElementById("youtube").style.right = "10px"
     document.getElementById("youtube").style.fontSize = "20px"
 
-    document.getElementById("github").style.transform = "translate(0, 50%) scale(0.6)"
+    document.getElementById("github").style.transform = "translate(0, 60%) scale(0.6)"
     document.getElementById("github").style.top = "10px"
     document.getElementById("github").style.right = "10px"
     document.getElementById("github").style.fontSize = "20px"
@@ -461,7 +461,7 @@ function showGithub() {
     document.getElementById("youtube").style.right = "10px"
     document.getElementById("youtube").style.fontSize = "20px"
 
-    document.getElementById("instagram").style.transform = "translate(0, 50%) scale(0.6)"
+    document.getElementById("instagram").style.transform = "translate(0, 60%) scale(0.6)"
     document.getElementById("instagram").style.top = "10px"
     document.getElementById("instagram").style.right = "10px"
     document.getElementById("instagram").style.fontSize = "20px"
