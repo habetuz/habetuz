@@ -156,12 +156,18 @@ h1 {
 	visibility: hidden;
 	position: fixed;
 	top: 100%;
-	transform: translate(50%, -50%);
+	transform-origin: right;
+	transform: translate(50%, -50%) scale(1);
+	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms, opacity 300ms;
+	
+}
+
+.social_media_text {
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
 	font-size: 30px;
 	color: #E8911A;
-	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms, opacity 300ms;
+	transition: inherit;
 	background-image: linear-gradient( #E8911A, #E8911A);
 }
 
