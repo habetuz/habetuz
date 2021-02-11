@@ -118,7 +118,7 @@ h1 {
 	width: 80%;
 	top: 100%;
 	left: 50%;
-	padding-bottom: 64px;
+	padding-bottom: 20vw;
 	transition: top 1s;
 	transform: translateX(-50%)
 }
@@ -195,6 +195,7 @@ h1 {
 
 	#instagram_content {
 		width: 70%;
+		padding-bottom: 55vw;
 	}
 
 	.video {
@@ -234,5 +235,9 @@ h1 {
 
 	.image {
 		width: calc(49% - 64px);
+	}
+
+	#instagram_content {
+		padding-bottom: 28vw;
 	}
 }
