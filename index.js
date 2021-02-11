@@ -34,7 +34,7 @@ document.getElementById("about_text_programming").addEventListener("click", func
     hideAbout()
     showGithub()
 })
-document.getElementById("youtube").addEventListener("click", function () {
+document.getElementById("youtube_text").addEventListener("click", function () {
     if (youtubeOpen) {
         hideYoutube()
         showSocialMedia()
@@ -42,7 +42,7 @@ document.getElementById("youtube").addEventListener("click", function () {
         showYoutube()
     }
 })
-document.getElementById("instagram").addEventListener("click", function () {
+document.getElementById("instagram_text").addEventListener("click", function () {
     if (instagramOpen) {
         hideInstagram()
         showSocialMedia()
@@ -50,7 +50,7 @@ document.getElementById("instagram").addEventListener("click", function () {
         showInstagram()
     }
 })
-document.getElementById("github").addEventListener("click", function () {
+document.getElementById("github_text").addEventListener("click", function () {
     if (githubOpen) {
         hideGithub()
         showSocialMedia()
@@ -287,6 +287,8 @@ function showYoutube() {
     document.getElementById("youtube").style.position = "absolute"
     if (window.innerWidth < 780) document.getElementById("youtube").style.backgroundSize = "100% 3px"
 
+    document.getElementById("youtube_link").style.opacity = "1"
+
     document.getElementById("instagram").style.transform = "translate(0, 0) scale(0.6)"
     document.getElementById("instagram").style.top = "10px"
     document.getElementById("instagram").style.right = "10px"
@@ -310,6 +312,8 @@ function hideYoutube() {
     document.getElementById("youtube").style.removeProperty("transform-origin")
     document.getElementById("youtube").style.removeProperty("transform")
     document.getElementById("youtube").style.removeProperty("background-size")
+
+    document.getElementById("youtube_link").style.removeProperty("opacity")
 
     document.getElementById("instagram").style.removeProperty("transform")
     document.getElementById("instagram").style.removeProperty("top")
@@ -363,6 +367,7 @@ function showInstagram() {
     document.getElementById("instagram").style.position = "absolute"
     if (window.innerWidth < 780) document.getElementById("instagram").style.backgroundSize = "100% 3px"
 
+    document.getElementById("instagram_link").style.opacity = "1"
 
     document.getElementById("youtube").style.transform = "translate(0, 0) scale(0.6)"
     document.getElementById("youtube").style.top = "10px"
@@ -387,6 +392,8 @@ function hideInstagram() {
     document.getElementById("instagram").style.removeProperty("transform-origin")
     document.getElementById("instagram").style.removeProperty("transform")
     document.getElementById("instagram").style.removeProperty("background-size")
+
+    document.getElementById("instagram_link").style.removeProperty("opacity")
 
     document.getElementById("youtube").style.removeProperty("transform")
     document.getElementById("youtube").style.removeProperty("top")
@@ -447,6 +454,8 @@ function showGithub() {
     document.getElementById("github").style.position = "absolute"
     if (window.innerWidth < 780) document.getElementById("github").style.backgroundSize = "100% 3px"
 
+    document.getElementById("github_link").style.opacity = "1"
+
     document.getElementById("youtube").style.transform = "translate(0, 0) scale(0.6)"
     document.getElementById("youtube").style.top = "10px"
     document.getElementById("youtube").style.right = "10px"
@@ -470,6 +479,8 @@ function hideGithub() {
     document.getElementById("github").style.removeProperty("transform-origin")
     document.getElementById("github").style.removeProperty("transform")
     document.getElementById("github").style.removeProperty("background-size")
+
+    document.getElementById("github_link").style.removeProperty("opacity")
 
     document.getElementById("instagram").style.removeProperty("transform")
     document.getElementById("instagram").style.removeProperty("top")

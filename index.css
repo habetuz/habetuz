@@ -30,6 +30,7 @@ body {
 
 h1 {
 	text-align: center;
+	margin: 0;
 }
 
 #logo {
@@ -69,7 +70,7 @@ h1 {
 #about {
 	position: fixed;
 	left: -30px;
-	bottom: 30px;
+	bottom: 50px;
 	transform: rotate(-90deg) translate(0, 100%);
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
@@ -153,6 +154,9 @@ h1 {
 }
 
 .social_media {
+	display: flex;
+	flex-direction:row;
+	align-items: center;
 	visibility: hidden;
 	position: fixed;
 	top: 100%;
@@ -169,6 +173,20 @@ h1 {
 	color: #E8911A;
 	transition: inherit;
 	background-image: linear-gradient( #E8911A, #E8911A);
+}
+
+.link_arrow {
+	margin-left: 10px;
+	height: 20px;
+	transform: translateX(0);
+	opacity: 0;
+	transition: transform 1s, opacity 1s;
+}
+
+.link_arrow:hover {
+	cursor: pointer;
+	transform: translateX(10px);
+	
 }
 
 .unselectable {
