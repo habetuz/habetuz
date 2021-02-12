@@ -68,7 +68,7 @@ window.addEventListener("resize", function (event) {
 
 
 
-var picuresIndexOffset = 1
+var picuresIndexOffset = 2
 
 var logoCollapsed = false
 var aboutOpen = false
