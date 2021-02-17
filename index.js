@@ -327,10 +327,8 @@ function hideYoutube() {
 
 function onYoutubeTransformationEnd() {
     if (!youtubeOpen) {
-        if (githubOpen || instagramOpen) {
-            document.getElementById("youtube_content").style.removeProperty("position")
-            document.getElementById("youtube").style.removeProperty("position")
-        }
+        document.getElementById("youtube_content").style.removeProperty("position")
+        document.getElementById("youtube").style.removeProperty("position")
     }
 }
 
@@ -409,7 +407,7 @@ function hideInstagram() {
 function onInstagramTransformationEnd() {
     if (!instagramOpen) {
         if (!youtubeOpen && !githubOpen && !socialMediaOpen) onSocialMediaTransformationEnd()
-        if (youtubeOpen || githubOpen) document.getElementById("instagram").style.removeProperty("position")
+        document.getElementById("instagram").style.removeProperty("position")
         document.getElementById("instagram_content").style.removeProperty("position")
     }
 }
@@ -497,7 +495,7 @@ function hideGithub() {
 function onGithubTransformationEnd() {
     if (!githubOpen) {
         //document.getElementById("youtube_content").style.removeProperty("position")
-        if (youtubeOpen || instagramOpen) document.getElementById("github").style.removeProperty("position")
+        document.getElementById("github").style.removeProperty("position")
     }
 }
 
