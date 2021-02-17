@@ -1,9 +1,15 @@
+//================================================================================
+// Transition-End events
+//================================================================================
 document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
 document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
 document.getElementById("youtube").addEventListener("transitionend", onYoutubeTransformationEnd)
 document.getElementById("instagram").addEventListener("transitionend", onInstagramTransformationEnd)
 document.getElementById("github").addEventListener("transitionend", onGithubTransformationEnd)
 
+//================================================================================
+// Click events
+//================================================================================
 document.getElementById("logo").addEventListener('click', function () {
     if (logoCollapsed) {
         hideAll()
@@ -59,6 +65,9 @@ document.getElementById("github_text").addEventListener("click", function () {
     }
 })
 
+//================================================================================
+// Scroll and resize event
+//================================================================================
 document.addEventListener("wheel", scroll)
 window.addEventListener("resize", function (event) {
     if (socialMediaOpen) showSocialMedia()
@@ -67,8 +76,9 @@ window.addEventListener("resize", function (event) {
     onScroll()
 })
 
-
-
+//================================================================================
+// Variables
+//================================================================================
 var picuresIndexOffset = 2
 var logoCollapsed = false
 var aboutOpen = false
@@ -95,11 +105,17 @@ video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyrosc
 video.allowFullscreen = true
 video.frameBorder = 0
 
+//================================================================================
+// Initialization
+//================================================================================
 loadUrl()
-
 window.onscroll = onScroll
+
+//================================================================================
+// Scroll handler
+//================================================================================
 function onScroll() {
-    
+
     if (window.pageYOffset > 100 && window.innerWidth < 800) {
         document.getElementById("logo").style.opacity = "0"
         if (!aboutOpen) {
@@ -113,7 +129,7 @@ function onScroll() {
         document.getElementById("instagram").style.removeProperty("opacity")
         document.getElementById("github").style.removeProperty("opacity")
     }
-    
+
 }
 
 function scroll(event) {
@@ -126,6 +142,9 @@ function scroll(event) {
     }
 }
 
+//================================================================================
+// Logo handler
+//================================================================================
 function collapseLogo() {
     if (!logoCollapsed) {
         document.getElementById("logo_disapear").style.opacity = "0";
@@ -171,6 +190,9 @@ function onLogoTransformationEnd() {
     }
 }
 
+//================================================================================
+// General 
+//================================================================================
 function hideAll() {
     if (aboutOpen) hideAbout()
     if (socialMediaOpen) hideSocialMedia()
@@ -179,6 +201,9 @@ function hideAll() {
     if (githubOpen) hideGithub()
 }
 
+//================================================================================
+// Social media handler
+//================================================================================
 function showSocialMedia() {
     pushState("")
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
@@ -211,6 +236,9 @@ function onSocialMediaTransformationEnd() {
     document.getElementById("youtube_content").style.removeProperty("position")
 }
 
+//================================================================================
+// About handler
+//================================================================================
 function showAbout() {
     pushState("about")
 
@@ -260,6 +288,9 @@ function onAboutTransformationEnd() {
     }
 }
 
+//================================================================================
+// YouTube handler
+//================================================================================
 function showYoutube() {
     pushState("youtube")
     hideAll()
@@ -337,6 +368,9 @@ function onYoutubeTransformationEnd() {
     }
 }
 
+//================================================================================
+// Instagram handler
+//================================================================================
 function showInstagram() {
     pushState("instagram")
     hideAll()
@@ -426,6 +460,9 @@ function evaluateImgHeight() {
     else document.getElementById("instagram_content").style.transform = "translateX(-50%)"
 }
 
+//================================================================================
+// Github handler
+//================================================================================
 function showGithub() {
     pushState("github")
     hideAll()
@@ -505,6 +542,9 @@ function onGithubTransformationEnd() {
     }
 }
 
+//================================================================================
+// URL handler
+//================================================================================
 function loadUrl() {
     var anchor = document.URL.split('#')[1]
     if (anchor == null) return
