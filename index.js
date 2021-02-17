@@ -62,7 +62,8 @@ document.getElementById("github_text").addEventListener("click", function () {
 document.addEventListener("wheel", scroll)
 window.addEventListener("resize", function (event) {
     if (socialMediaOpen) showSocialMedia()
-    if (instagramOpen) evaluateImgHeight()
+    //if (instagramOpen) 
+    evaluateImgHeight()
     onScroll()
 })
 
@@ -99,7 +100,7 @@ loadUrl()
 window.onscroll = onScroll
 function onScroll() {
     
-    if (window.pageYOffset > 150 && window.innerWidth < 800) {
+    if (window.pageYOffset > 100 && window.innerWidth < 800) {
         document.getElementById("logo").style.opacity = "0"
         if (!aboutOpen) {
             if (!youtubeOpen) document.getElementById("youtube").style.opacity = "0"
@@ -226,7 +227,7 @@ function showAbout() {
     document.getElementById("about").style.transform = "translate(-50%,50%)"
     document.getElementById("about").style.fontSize = "50px"
     document.getElementById("about").style.left = "50%"
-    document.getElementById("about").style.bottom = "70%"
+    document.getElementById("about").style.bottom = "80%"
     if (window.innerWidth < 780) document.getElementById("about").style.backgroundSize = "100% 3px"
 
     document.getElementById("about_text").style.visibility = "visible"

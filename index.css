@@ -161,7 +161,7 @@ h1 {
 	position: fixed;
 	top: 100%;
 	font-size: 30px;
-	transform: translate(50%, -50%);
+	transform: translate(calc(50% + 23px), -50%);
 	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms, opacity 300ms;
 	
 }
