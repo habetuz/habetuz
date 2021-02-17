@@ -414,7 +414,8 @@ function onInstagramTransformationEnd() {
 }
 
 function evaluateImgHeight() {
-    document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].clientHeight / 2) + "px)"
+    if (window.innerWidth >= 780) document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].clientHeight / 2) + "px)"
+    else document.getElementById("instagram_content").style.transform = "translateX(-50%)"
 }
 
 function mouseOverImage(event) {

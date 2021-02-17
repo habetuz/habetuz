@@ -120,7 +120,7 @@ h1 {
 	top: 100%;
 	left: 50%;
 	padding-bottom: 20vw;
-	transition: top 1s;
+	transition: top 1s, transform 500ms;
 	transform: translateX(-50%)
 }
 
@@ -222,6 +222,7 @@ h1 {
 	}
 
 	#instagram_content {
+		transform: none;
 		width: 70%;
 		padding-bottom: 55vw;
 	}
@@ -234,6 +235,7 @@ h1 {
 	}
 
 	.image {
+		transform: none;
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
