@@ -275,7 +275,6 @@ function showYoutube() {
 
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.visibility = "visible"
-        element.style.fontSize = "50px"
     });
 
     document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
@@ -283,9 +282,9 @@ function showYoutube() {
 
     document.getElementById("youtube").style.right = "50%"
     document.getElementById("youtube").style.top = "30%"
-    document.getElementById("youtube").style.transform = "translate(50%,-50%)"
+    document.getElementById("youtube").style.fontSize = "50px"
     document.getElementById("youtube").style.position = "absolute"
-    if (window.innerWidth < 780) document.getElementById("youtube").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("youtube_text").style.backgroundSize = "100% 3px"
 
     document.getElementById("youtube_link").style.opacity = "1"
 
@@ -310,7 +309,8 @@ function hideYoutube() {
     document.getElementById("youtube").style.removeProperty("right")
     document.getElementById("youtube").style.removeProperty("top")
     document.getElementById("youtube").style.removeProperty("font-size")
-    document.getElementById("youtube").style.removeProperty("background-size")
+
+    document.getElementById("youtube_text").style.removeProperty("background-size")
 
     document.getElementById("youtube_link").style.removeProperty("opacity")
 
@@ -342,8 +342,8 @@ function showInstagram() {
             var image = document.createElement("img")
             image.classList.add("image")
             image.src = "pictures/" + i + ".jpg"
-            image.onmouseover = mouseOverImage
-            image.onmouseout = mouseOutImage
+            //image.onmouseover = mouseOverImage
+            //image.onmouseout = mouseOutImage
             document.getElementById("instagram_content").appendChild(image)
         }
         instagramLoaded = true
@@ -352,7 +352,6 @@ function showInstagram() {
 
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.visibility = "visible"
-        element.style.fontSize = "50px"
     });
 
     evaluateImgHeight()
@@ -364,7 +363,7 @@ function showInstagram() {
     document.getElementById("instagram").style.top = "30%"
     document.getElementById("instagram").style.fontSize = "50px"
     document.getElementById("instagram").style.position = "absolute"
-    if (window.innerWidth < 780) document.getElementById("instagram").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("instagram_text").style.backgroundSize = "100% 3px"
 
     document.getElementById("instagram_link").style.opacity = "1"
 
@@ -389,7 +388,8 @@ function hideInstagram() {
     document.getElementById("instagram").style.removeProperty("right")
     document.getElementById("instagram").style.removeProperty("top")
     document.getElementById("instagram").style.removeProperty("font-size")
-    document.getElementById("instagram").style.removeProperty("background-size")
+
+    document.getElementById("instagram_text").style.removeProperty("background-size")
 
     document.getElementById("instagram_link").style.removeProperty("opacity")
 
@@ -418,14 +418,6 @@ function evaluateImgHeight() {
     else document.getElementById("instagram_content").style.transform = "translateX(-50%)"
 }
 
-function mouseOverImage(event) {
-    //event.target.style.transform = "translateY(50%) scale(1.1) rotate(10deg)"
-}
-
-function mouseOutImage(event) {
-    //event.target.style.removeProperty("transform")
-}
-
 function showGithub() {
     pushState("github")
     hideAll()
@@ -442,7 +434,6 @@ function showGithub() {
     */
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.visibility = "visible"
-        element.style.fontSize = "50px"
     });
     /*
     document.getElementById("youtube_content").style.top = "calc(30% + 100px)"
@@ -453,7 +444,7 @@ function showGithub() {
     document.getElementById("github").style.top = "30%"
     document.getElementById("github").style.fontSize = "50px"
     document.getElementById("github").style.position = "absolute"
-    if (window.innerWidth < 780) document.getElementById("github").style.backgroundSize = "100% 3px"
+    if (window.innerWidth < 780) document.getElementById("github_text").style.backgroundSize = "100% 3px"
 
     document.getElementById("github_link").style.opacity = "1"
 
@@ -478,7 +469,8 @@ function hideGithub() {
     document.getElementById("github").style.removeProperty("right")
     document.getElementById("github").style.removeProperty("top")
     document.getElementById("github").style.removeProperty("font-size")
-    document.getElementById("github").style.removeProperty("background-size")
+    
+    document.getElementById("github_text").style.removeProperty("background-size")
 
     document.getElementById("github_link").style.removeProperty("opacity")
 
