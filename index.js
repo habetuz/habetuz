@@ -99,11 +99,6 @@ var videoSources = [
     "https://www.youtube-nocookie.com/embed/oilqao_a-Hs",
     "https://www.youtube-nocookie.com/embed/T55dDCaWBFg",
 ]
-var video = document.createElement("iframe")
-video.classList.add("video")
-video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-video.allowFullscreen = true
-video.frameBorder = 0
 
 //================================================================================
 // Initialization
@@ -296,6 +291,11 @@ function showYoutube() {
     hideAll()
 
     if (!youtubeLoaded) {
+        var video = document.createElement("iframe")
+        video.classList.add("video")
+        video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        video.allowFullscreen = true
+        video.frameBorder = 0
         videoSources.forEach(source => {
             var copy = video.cloneNode(true)
             copy.src = source
@@ -325,12 +325,12 @@ function showYoutube() {
     document.getElementById("instagram").style.transform = "translate(0, 0)"
     document.getElementById("instagram").style.fontSize = "20px"
     document.getElementById("instagram").style.top = "10px"
-    document.getElementById("instagram").style.right = "-40px"
+    document.getElementById("instagram").style.right = "-25px"
 
     document.getElementById("github").style.transform = "translate(0, 80%)"
     document.getElementById("github").style.fontSize = "20px"
     document.getElementById("github").style.top = "10px"
-    document.getElementById("github").style.right = "-40px"
+    document.getElementById("github").style.right = "-25px"
 
     youtubeOpen = true
 }
@@ -410,12 +410,12 @@ function showInstagram() {
 
     document.getElementById("youtube").style.transform = "translate(0, 0)"
     document.getElementById("youtube").style.top = "10px"
-    document.getElementById("youtube").style.right = "-40px"
+    document.getElementById("youtube").style.right = "-25px"
     document.getElementById("youtube").style.fontSize = "20px"
 
     document.getElementById("github").style.transform = "translate(0, 80%)"
     document.getElementById("github").style.top = "10px"
-    document.getElementById("github").style.right = "-40px"
+    document.getElementById("github").style.right = "-25px"
     document.getElementById("github").style.fontSize = "20px"
 
     instagramOpen = true
@@ -498,12 +498,12 @@ function showGithub() {
 
     document.getElementById("youtube").style.transform = "translate(0, 0)"
     document.getElementById("youtube").style.top = "10px"
-    document.getElementById("youtube").style.right = "-40px"
+    document.getElementById("youtube").style.right = "-25px"
     document.getElementById("youtube").style.fontSize = "20px"
 
     document.getElementById("instagram").style.transform = "translate(0, 80%)"
     document.getElementById("instagram").style.top = "10px"
-    document.getElementById("instagram").style.right = "-40px"
+    document.getElementById("instagram").style.right = "-25px"
     document.getElementById("instagram").style.fontSize = "20px"
 
     githubOpen = true

@@ -159,7 +159,7 @@ h1 {
 	align-items: center;
 	visibility: hidden;
 	position: fixed;
-	top: 100%;
+	top: 110%;
 	font-size: 30px;
 	transform: translate(calc(50% + 23px), -50%);
 	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms, opacity 300ms;
