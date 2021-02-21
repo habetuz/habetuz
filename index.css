@@ -120,7 +120,7 @@ h1 {
 	top: 100%;
 	left: 50%;
 	padding-bottom: 20vw;
-	transition: top 1s, transform 500ms;
+	transition: top 1s;
 	transform: translateX(-50%)
 }
 

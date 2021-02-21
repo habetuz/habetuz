@@ -115,6 +115,21 @@ var imageSources =  [
     "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/65257849_635446110200567_7454596521475907995_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=vLjLyvU_haEAX80sDfy&tp=1&oh=2c3fe01b4c94afbc10591be2f09f5656&oe=605CAFCB"
 ]
 
+var imageLinks = [
+    "https://www.instagram.com/p/CLd42R-HSef/",
+    "https://www.instagram.com/p/CLMF2TKnGGt/",
+    "https://www.instagram.com/p/CJdzvsKHJkd/",
+    "https://www.instagram.com/p/CI_BndknTSt/",
+    "https://www.instagram.com/p/CEPEGHbnaSS/",
+    "https://www.instagram.com/p/CB0bRDTnJMp/",
+    "https://www.instagram.com/p/B9wscMjHnsC/",
+    "https://www.instagram.com/p/B4-EKpfqkBF/",
+    "https://www.instagram.com/p/B2Zs0jaC9I5/",
+    "https://www.instagram.com/p/B1im_m-CtB5/",
+    "https://www.instagram.com/p/B1Q2J0rihVb/",
+    "https://www.instagram.com/p/BzBYeY1i_4w/"
+]
+
 //================================================================================
 // Initialization
 //================================================================================
@@ -391,16 +406,21 @@ function showInstagram() {
     hideAll()
 
     if (!instagramLoaded) {
-        imageSources.forEach(imageSource => {
+        for(var i = 0; i < imageSources.length; i++) {
             var image = document.createElement("img")
             image.classList.add("image")
-            image.src = imageSource
+            image.src = imageSources[i]
+
+            var link = document.createElement("a")
+            link.href = imageLinks[i]
+            link.target = "blank"
+            link.appendChild(image)
             //image.onmouseover = mouseOverImage
             //image.onmouseout = mouseOutImage
-            document.getElementById("instagram_content").appendChild(image)
-        })
+            document.getElementById("instagram_content").appendChild(link)
+        }
         instagramLoaded = true
-        document.getElementById("instagram_content").children[0].onload = evaluateImgHeight
+        document.getElementById("instagram_content").children[0].children[0].onload = evaluateImgHeight
     }
 
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
@@ -471,7 +491,7 @@ function onInstagramTransformationEnd() {
 }
 
 function evaluateImgHeight() {
-    if (window.innerWidth >= 780) document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].clientHeight / 2) + "px)"
+    if (window.innerWidth >= 780) document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].children[0].clientHeight / 2) + "px)"
     else document.getElementById("instagram_content").style.transform = "translateX(-50%)"
 }
 
