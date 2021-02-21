@@ -100,28 +100,12 @@ h1 {
 	right: 70%;
 }
 
-#youtube_content {
-	position: fixed;
-	width: 80%;
-	top: 100%;
-	left: 50%;
-	padding-bottom: 64px;
-	transition: top 1s;
-	transform: translateX(-50%)
-}
-
 #instagram {
 	right: 50%;
 }
 
 #instagram_content {
-	position: fixed;
-	width: 80%;
-	top: 100%;
-	left: 50%;
-	padding-bottom: 20vw;
-	transition: top 1s;
-	transform: translateX(-50%)
+	visibility: hidden;
 }
 
 #github {
@@ -139,6 +123,16 @@ h1 {
 	margin: 32px;
 	width: calc(33% - 64px);
 	box-shadow: 0px 0px 20px #000000;
+}
+
+.content {
+	position: fixed;
+	width: 80%;
+	top: 100%;
+	left: 50%;
+	padding-bottom: 64px;
+	transition: top 1s;
+	transform: translateX(-50%)
 }
 
 .animated_underline {
@@ -160,18 +154,17 @@ h1 {
 	visibility: hidden;
 	position: fixed;
 	top: 110%;
-	font-size: 30px;
 	transform: translate(calc(50% + 23px), -50%);
-	transition: right 1s, top 1s, font-size 1s, transform 1s, background-size 500ms, opacity 300ms;
+	transition: right 1s, top 1s, transform 1s, background-size 500ms, opacity 300ms;
 	
 }
 
 .social_media_text {
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
-	font-size: inherit;
+	font-size: 30px;
 	color: #E8911A;
-	transition: inherit;
+	transition: font-size 1s;
 	background-image: linear-gradient( #E8911A, #E8911A);
 }
 
