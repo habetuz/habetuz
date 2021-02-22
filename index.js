@@ -506,7 +506,7 @@ function onInstagramTransformationEnd() {
 }
 
 function evaluateImgHeight() {
-    if (window.innerWidth >= 780) document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].children[0].clientHeight / 2) + "px)"
+    if (instagramLoaded && window.innerWidth >= 780) document.getElementById("instagram_content").style.transform = "translate(-50%, -" + (document.getElementById("instagram_content").children[0].children[0].clientHeight / 2) + "px)"
     else document.getElementById("instagram_content").style.transform = "translateX(-50%)"
 }
 
