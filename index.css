@@ -123,7 +123,14 @@ h1 {
 	transform: translateY(50%);
 	margin: 32px;
 	width: calc(33% - 64px);
-	box-shadow: 0px 0px 20px #000000;
+	box-shadow: 0px 0px 100px #000000;
+	opacity: 1;
+	transition: opacity 500ms, box-shadow 500ms;
+}
+
+.image:hover {
+	opacity: 0.8;
+	box-shadow: 0px 0px 100px #1d1d1d;
 }
 
 .github_card {
