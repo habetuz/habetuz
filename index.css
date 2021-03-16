@@ -263,6 +263,10 @@ h1 {
 		padding-bottom: 55vw;
 	}
 
+	#github_content {
+		width: 70%;
+	}
+
 	.video {
 		margin-left: 0;
 		margin-right: 0;
