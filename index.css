@@ -126,6 +126,25 @@ h1 {
 	box-shadow: 0px 0px 20px #000000;
 }
 
+.github_card {
+	margin: 32px;
+	width: calc(33% - 64px);
+	height: 12vw;
+	background: #BA1A1A;
+}
+
+.github_card_image {
+	width: 100%;
+}
+
+.github_card_title {
+
+}
+
+.github_card_description {
+
+}
+
 .content {
 	position: fixed;
 	width: 80%;
@@ -156,7 +175,7 @@ h1 {
 	position: fixed;
 	top: 110%;
 	transform: translate(calc(50% + 23px), -50%);
-	transition: right 1s, top 1s, transform 1s, background-size 500ms, opacity 300ms;
+	transition: right 1s, top 1s, transform 1s, opacity 300ms;
 	
 }
 
@@ -165,7 +184,7 @@ h1 {
 	font-weight: 600;
 	font-size: 30px;
 	color: #E8911A;
-	transition: font-size 1s;
+	transition: font-size 1s, background-size 500ms;
 	background-image: linear-gradient( #E8911A, #E8911A);
 }
 
