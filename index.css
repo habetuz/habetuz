@@ -114,16 +114,58 @@ h1 {
 }
 
 .video {
-	padding: 32px;
+	margin: 32px;
 	width: calc(33% - 64px);
 	height: 12vw;
+	box-shadow: 0px 0px 20px #000000;
 }
 
 .image {
 	transform: translateY(50%);
 	margin: 32px;
 	width: calc(33% - 64px);
+	box-shadow: 0px 0px 100px #000000;
+	opacity: 1;
+	transition: opacity 500ms, box-shadow 500ms;
+}
+
+.image:hover {
+	opacity: 0.8;
+	box-shadow: 0px 0px 100px #1d1d1d;
+}
+
+.github_card {
+	overflow: hidden;
+	margin: 32px;
+	width: calc(33% - 64px);
+	background-color: #ffffff01;
 	box-shadow: 0px 0px 20px #000000;
+	border-radius: 25px;
+	transition: box-shadow 500ms;
+	float: left;
+}
+
+.github_card:hover {
+	box-shadow: 0px 0px 40px #121414;
+}
+
+.github_card_image {
+	border-radius: 25px;
+	width: 100%;
+}
+
+.github_card_title {
+	text-align: center;
+	margin: 20px;
+	font-family: 'Montserrat', serif;
+	color: #E3E5E5;
+}
+
+.github_card_description {
+	font-family: 'Montserrat', serif;
+	color: #E3E5E5;
+	font-weight: normal;
+	margin: 20px;
 }
 
 .content {
@@ -156,7 +198,7 @@ h1 {
 	position: fixed;
 	top: 110%;
 	transform: translate(calc(50% + 23px), -50%);
-	transition: right 1s, top 1s, transform 1s, background-size 500ms, opacity 300ms;
+	transition: right 1s, top 1s, transform 1s, opacity 300ms;
 	
 }
 
@@ -165,7 +207,7 @@ h1 {
 	font-weight: 600;
 	font-size: 30px;
 	color: #E8911A;
-	transition: font-size 1s;
+	transition: font-size 1s, background-size 500ms;
 	background-image: linear-gradient( #E8911A, #E8911A);
 }
 
@@ -222,8 +264,8 @@ h1 {
 	}
 
 	.video {
-		padding-left: 0;
-		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
 		width: 100%;
 		height: 38vw;
 	}
@@ -234,6 +276,12 @@ h1 {
 		margin-right: 0;
 		width: 100%;
 		transition: transform 500ms;
+	}
+
+	.github_card {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
 	}
 }
 
@@ -258,6 +306,10 @@ h1 {
 	}
 
 	.image {
+		width: calc(49% - 64px);
+	}
+
+	.github_card {
 		width: calc(49% - 64px);
 	}
 

@@ -519,16 +519,6 @@ function showGithub() {
     pushState("github")
     hideAll()
 
-    /*
-    if(!youtubeLoaded) {
-        videoSources.forEach(source => {
-            var copy = video.cloneNode(true)
-            copy.src = source
-            document.getElementById("youtube_content").appendChild(copy)
-        })
-        youtubeLoaded = true
-    }
-    */
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
         element.style.visibility = "visible"
     });
@@ -568,7 +558,7 @@ function showGithub() {
 function hideGithub() {
     document.documentElement.scrollTop = 0;
 
-    //document.getElementById("youtube_content").style.removeProperty("top")
+    document.getElementById("github_content").style.removeProperty("top")
 
     document.getElementById("github").style.removeProperty("right")
     document.getElementById("github").style.removeProperty("top")
@@ -596,7 +586,7 @@ function hideGithub() {
 
 function onGithubTransformationEnd() {
     if (!githubOpen) {
-        //document.getElementById("youtube_content").style.removeProperty("position")
+        document.getElementById("github_content").style.removeProperty("position")
         document.getElementById("github").style.removeProperty("position")
     }
 }
