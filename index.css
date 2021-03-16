@@ -138,7 +138,7 @@ h1 {
 	overflow: hidden;
 	margin: 32px;
 	width: calc(33% - 64px);
-	background-color: #ffffff01;
+	background-color: #ffffff02;
 	box-shadow: 0px 0px 20px #000000;
 	border-radius: 25px;
 	transition: box-shadow 500ms;
