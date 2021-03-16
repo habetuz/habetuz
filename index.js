@@ -112,8 +112,7 @@ var imageSources =  [
     "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/74704993_2399555703503722_6023033991962006533_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=0qyKzW1ukeEAX8uS1nL&tp=1&oh=fa90be1f2b102502f181a965837103c2&oe=605B29B0",
     "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/67977141_773697193062871_5190500679055593464_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=UYibOZSmkGIAX8jARIT&tp=1&oh=f4e7d7b984c41b88e262645570135a1d&oe=605BFA77",
     "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/69227703_745844959204847_1813274751136152880_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rR4BRmUvT3AAX8XXrTT&tp=1&oh=232298dbaae3c059250ae30a20165840&oe=605948B2",
-    "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/67798585_2592293000815858_5241977088123087094_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=DKmGPql0x_IAX9SIy4a&tp=1&oh=2c5e4a7de63af4de07a864775eac7354&oe=605A0E2F",
-    "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/65257849_635446110200567_7454596521475907995_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=vLjLyvU_haEAX80sDfy&tp=1&oh=2c3fe01b4c94afbc10591be2f09f5656&oe=605CAFCB"
+    "https://scontent-muc2-1.cdninstagram.com/v/t51.2885-15/e35/67798585_2592293000815858_5241977088123087094_n.jpg?_nc_ht=scontent-muc2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=DKmGPql0x_IAX9SIy4a&tp=1&oh=2c5e4a7de63af4de07a864775eac7354&oe=605A0E2F"
 ]
 
 var imageLinks = [
@@ -128,8 +127,7 @@ var imageLinks = [
     "https://www.instagram.com/p/B4-EKpfqkBF/",
     "https://www.instagram.com/p/B2Zs0jaC9I5/",
     "https://www.instagram.com/p/B1im_m-CtB5/",
-    "https://www.instagram.com/p/B1Q2J0rihVb/",
-    "https://www.instagram.com/p/BzBYeY1i_4w/"
+    "https://www.instagram.com/p/B1Q2J0rihVb/"
 ]
 
 //================================================================================
