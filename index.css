@@ -159,6 +159,7 @@ h1 {
 	margin: 20px;
 	font-family: 'Montserrat', serif;
 	color: #E3E5E5;
+	text-decoration: none;
 }
 
 .github_card_description {
@@ -166,6 +167,7 @@ h1 {
 	color: #E3E5E5;
 	font-weight: normal;
 	margin: 20px;
+	text-decoration: none;
 }
 
 .content {
