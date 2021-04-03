@@ -26,7 +26,7 @@ html {
 body {
 	background-color: #121414;
 	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 
 h1 {
