@@ -516,7 +516,7 @@ function evaluateImgHeight() {
 // Github handler
 //================================================================================
 function showGithub() {
-    pushState("github")
+    pushState("projects")
     hideAll()
 
     Array.from(document.getElementsByClassName("social_media")).forEach(element => {
@@ -611,7 +611,7 @@ function loadUrl() {
             collapseLogo()
             showInstagram()
             break
-        case "github":
+        case "projects":
             collapseLogo()
             showGithub()
             break
