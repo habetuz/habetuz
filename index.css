@@ -180,7 +180,7 @@ h1 {
 .content {
 	position: fixed;
 	width: 80%;
-	top: 100%;
+	top: 110%;
 	left: 50%;
 	padding-bottom: 64px;
 	transition: top 1s;
