@@ -174,13 +174,13 @@ function scroll(event) {
 //================================================================================
 function collapseLogo() {
     if (!logoCollapsed) {
-        document.getElementById("logo_disapear").style.opacity = "0";
-        document.getElementById("logo_disapear").style.transitionDelay = "0s"
+        document.getElementById("logo_disappear").style.opacity = "0";
+        document.getElementById("logo_disappear").style.transitionDelay = "0s"
 
         document.getElementById("logo_H").style.transform = "translate(" + -452.5 + "px, " + 0.5 + "px)"
 
         document.getElementById("logo").style.left = 170 + "px"
-        document.getElementById("logo").style.top = 50 + "px"
+        document.getElementById("logo").style.top = 100 + "px"
         document.getElementById("logo").style.width = "300px"
 
         document.getElementById("scroll_arrows").style.transitionDelay = ("0s")
@@ -194,8 +194,8 @@ function expandLogo() {
     if (logoCollapsed) {
         pushState("")
 
-        document.getElementById("logo_disapear").style.removeProperty("opacity")
-        document.getElementById("logo_disapear").style.removeProperty("transition")
+        document.getElementById("logo_disappear").style.removeProperty("opacity")
+        document.getElementById("logo_disappear").style.removeProperty("transition")
 
         document.getElementById("logo_H").style.removeProperty("transform")
 
@@ -243,8 +243,8 @@ function showSocialMedia() {
     });
 
     if (window.innerWidth <= 1000) {
-        document.getElementById("youtube").style.top = "30%"
-        document.getElementById("instagram").style.top = "50%"
+        //// document.getElementById("youtube").style.top = "30%"
+        //// document.getElementById("instagram").style.top = "50%"
         document.getElementById("github").style.top = "70%"
     }
     socialMediaOpen = true;
@@ -259,6 +259,10 @@ function hideSocialMedia() {
         element.style.removeProperty("top")
     });
     socialMediaOpen = false;
+
+    //// Coming soon
+    document.getElementById("coming_soon").style.transitionDelay = "0s"
+    document.getElementById("coming_soon").style.top = "-50px"
 }
 
 function onSocialMediaTransformationEnd() {
@@ -266,12 +270,9 @@ function onSocialMediaTransformationEnd() {
         element.style.removeProperty("visibility")
         element.style.removeProperty("position")
     });
-    document.getElementById("youtube_content").style.removeProperty("visibility")
-    document.getElementById("youtube_content").style.removeProperty("position")
+    //// document.getElementById("youtube_content").style.removeProperty("visibility")
+    //// document.getElementById("youtube_content").style.removeProperty("position")
 
-    //// Coming soon
-    document.getElementById("coming_soon").style.transitionDelay = "0s"
-    document.getElementById("coming_soon").style.top = "-50px"
 }
 
 //================================================================================
