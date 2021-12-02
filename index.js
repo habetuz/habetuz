@@ -268,6 +268,10 @@ function onSocialMediaTransformationEnd() {
     });
     document.getElementById("youtube_content").style.removeProperty("visibility")
     document.getElementById("youtube_content").style.removeProperty("position")
+
+    //// Coming soon
+    document.getElementById("coming_soon").style.transitionDelay = "0s"
+    document.getElementById("coming_soon").style.top = "-50px"
 }
 
 //================================================================================
