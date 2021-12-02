@@ -2,9 +2,9 @@
 // Transition-End events
 //================================================================================
 document.getElementById("logo").addEventListener("transitionend", onLogoTransformationEnd)
-document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
-document.getElementById("youtube").addEventListener("transitionend", onYoutubeTransformationEnd)
-document.getElementById("instagram").addEventListener("transitionend", onInstagramTransformationEnd)
+////document.getElementById("about").addEventListener("transitionend", onAboutTransformationEnd)
+////document.getElementById("youtube").addEventListener("transitionend", onYoutubeTransformationEnd)
+////document.getElementById("instagram").addEventListener("transitionend", onInstagramTransformationEnd)
 document.getElementById("github").addEventListener("transitionend", onGithubTransformationEnd)
 
 //================================================================================
@@ -20,42 +20,42 @@ document.getElementById("scroll_arrows").addEventListener('click', function () {
     collapseLogo()
     showSocialMedia()
 })
-document.getElementById("about").addEventListener("click", function () {
-    if (aboutOpen) {
-        hideAbout()
-        afterAboutHide()
-    } else {
-        showAbout()
-    }
-})
-document.getElementById("about_text_photography").addEventListener("click", function () {
-    hideAbout()
-    showInstagram()
-})
-document.getElementById("about_text_filming").addEventListener("click", function () {
-    hideAbout()
-    showYoutube()
-})
-document.getElementById("about_text_programming").addEventListener("click", function () {
-    hideAbout()
-    showGithub()
-})
-document.getElementById("youtube_text").addEventListener("click", function () {
-    if (youtubeOpen) {
-        hideYoutube()
-        showSocialMedia()
-    } else {
-        showYoutube()
-    }
-})
-document.getElementById("instagram_text").addEventListener("click", function () {
-    if (instagramOpen) {
-        hideInstagram()
-        showSocialMedia()
-    } else {
-        showInstagram()
-    }
-})
+////document.getElementById("about").addEventListener("click", function () {
+////    if (aboutOpen) {
+////        hideAbout()
+////        afterAboutHide()
+////    } else {
+////        showAbout()
+////    }
+////})
+////document.getElementById("about_text_photography").addEventListener("click", function () {
+////    hideAbout()
+////    showInstagram()
+////})
+////document.getElementById("about_text_filming").addEventListener("click", function () {
+////    hideAbout()
+////    showYoutube()
+////})
+////document.getElementById("about_text_programming").addEventListener("click", function () {
+////    hideAbout()
+////    showGithub()
+////})
+////document.getElementById("youtube_text").addEventListener("click", function () {
+////    if (youtubeOpen) {
+////        hideYoutube()
+////        showSocialMedia()
+////    } else {
+////        showYoutube()
+////    }
+////})
+////document.getElementById("instagram_text").addEventListener("click", function () {
+////    if (instagramOpen) {
+////        hideInstagram()
+////        showSocialMedia()
+////    } else {
+////        showInstagram()
+////    }
+////})
 document.getElementById("github_text").addEventListener("click", function () {
     if (githubOpen) {
         hideGithub()
@@ -226,6 +226,10 @@ function hideAll() {
     if (youtubeOpen) hideYoutube()
     if (instagramOpen) hideInstagram()
     if (githubOpen) hideGithub()
+
+    //// Coming soon
+    document.getElementById("coming_soon").style.transitionDelay = "0s"
+    document.getElementById("coming_soon").style.top = "-50px"
 }
 
 //================================================================================
@@ -244,6 +248,10 @@ function showSocialMedia() {
         document.getElementById("github").style.top = "70%"
     }
     socialMediaOpen = true;
+
+    //// Coming soon
+    document.getElementById("coming_soon").style.transitionDelay = "0.5s"
+    document.getElementById("coming_soon").style.top = "0px"
 }
 
 function hideSocialMedia() {
@@ -540,17 +548,17 @@ function showGithub() {
 
     document.getElementById("github_link").style.opacity = "1"
 
-    document.getElementById("youtube").style.transform = "translate(0, 0)"
-    document.getElementById("youtube").style.top = "10px"
-    document.getElementById("youtube").style.right = "-25px"
-
-    document.getElementById("youtube_text").style.fontSize = "20px"
-
-    document.getElementById("instagram").style.transform = "translate(0, 80%)"
-    document.getElementById("instagram").style.top = "10px"
-    document.getElementById("instagram").style.right = "-25px"
-
-    document.getElementById("instagram_text").style.fontSize = "20px"
+    ////document.getElementById("youtube").style.transform = "translate(0, 0)"
+    ////document.getElementById("youtube").style.top = "10px"
+    ////document.getElementById("youtube").style.right = "-25px"
+    ////
+    ////document.getElementById("youtube_text").style.fontSize = "20px"
+    ////
+    ////document.getElementById("instagram").style.transform = "translate(0, 80%)"
+    ////document.getElementById("instagram").style.top = "10px"
+    ////document.getElementById("instagram").style.right = "-25px"
+    ////
+    ////document.getElementById("instagram_text").style.fontSize = "20px"
 
     githubOpen = true
 }
@@ -569,17 +577,17 @@ function hideGithub() {
 
     document.getElementById("github_link").style.removeProperty("opacity")
 
-    document.getElementById("instagram").style.removeProperty("transform")
-    document.getElementById("instagram").style.removeProperty("top")
-    document.getElementById("instagram").style.removeProperty("right")
-
-    document.getElementById("instagram_text").style.removeProperty("font-size")
-
-    document.getElementById("youtube").style.removeProperty("transform")
-    document.getElementById("youtube").style.removeProperty("top")
-    document.getElementById("youtube").style.removeProperty("right")
-
-    document.getElementById("youtube_text").style.removeProperty("font-size")
+    ////document.getElementById("instagram").style.removeProperty("transform")
+    ////document.getElementById("instagram").style.removeProperty("top")
+    ////document.getElementById("instagram").style.removeProperty("right")
+    ////
+    ////document.getElementById("instagram_text").style.removeProperty("font-size")
+    ////
+    ////document.getElementById("youtube").style.removeProperty("transform")
+    ////document.getElementById("youtube").style.removeProperty("top")
+    ////document.getElementById("youtube").style.removeProperty("right")
+    ////
+    ////document.getElementById("youtube_text").style.removeProperty("font-size")
 
     githubOpen = false
 }
