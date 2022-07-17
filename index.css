@@ -26,6 +26,7 @@ h1 {
 h2 {
     font-family: 'Bodoni Moda', serif;
     font-weight: 600;
+    color: var(--main-dark);
     font-size: 20pt;
 }
 
