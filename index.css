@@ -11,13 +11,21 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 40;
 }
 
 h1 {
     font-family: 'Bodoni Moda', serif;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--main-dark);
     font-size: 100px;
+}
+
+h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 600;
 }
 
 #title {
@@ -25,7 +33,7 @@ h1 {
     height: fit-content;
     margin: 0;
     padding: 0;
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
