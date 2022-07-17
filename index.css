@@ -20,7 +20,7 @@ h1 {
     font-family: 'Bodoni Moda', serif;
     font-weight: 700;
     color: var(--main-dark);
-    font-size: 70pt;
+    font-size: 80pt;
 }
 
 h2 {
@@ -76,4 +76,10 @@ h2 {
         transform: translate(50%, 50%);
         bottom: 20%;
     }
-  }
+}
+
+@media only screen and (max-width: 850px) {
+    #title {
+        font-size: 12vw;
+    }
+}
