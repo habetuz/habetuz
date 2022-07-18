@@ -6,7 +6,14 @@ var background_y = 0
 var background_x_middle = 0
 var background_y_middle = 0
 
+var background_fullscreen = false
+
+var link_about = document.getElementById("about_link")
+var link_projects = document.getElementById("projects_link")
+
 function linkHoverStart(link) {
+    if (background_fullscreen) return
+
     let linkRect = link.getBoundingClientRect()
     background.style.transform = "scale(1)"
 
@@ -20,10 +27,34 @@ function linkHoverStart(link) {
 }
 
 function linkHoverEnd(link) {
+    if (background_fullscreen) return
+
     background.style.transform = "scale(0)"
 }
 
+function linkClick(link) {
+    if (background_fullscreen) return
+
+    linkHoverStart(link)
+
+    background.classList.replace("background_dot", "background_fullscreen")
+    background.style.transform = null
+
+    if (link == link_about) {
+        link_projects.style.color = getComputedStyle(document.body).getPropertyValue("--main-dark")
+        link_projects.style.mixBlendMode = "normal"
+    }
+    else {
+        link_about.style.color = getComputedStyle(document.body).getPropertyValue("--main-dark")
+        link_about.style.mixBlendMode = "normal"
+    }
+
+    background_fullscreen = true
+}
+
 onmousemove = (event) => {
+    if (background_fullscreen) return
+
     backgroundRect = background.getBoundingClientRect()
 
     x_distance = event.clientX - background_x_middle
