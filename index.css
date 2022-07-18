@@ -13,7 +13,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-optical-sizing: auto;
-    font-variation-settings: "opsz" 40;
+    font-variation-settings: "opsz" 30;
 }
 
 h1 {
