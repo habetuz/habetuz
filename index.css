@@ -6,47 +6,62 @@ body {
     --second-light: #737373;
     --second-dark: #D9D9D9;
 
-    background: var(--main-light);
-    margin: 0;
-    padding: 0;
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
+    background: var(--main-light);
     font-optical-sizing: auto;
-    font-variation-settings: "opsz" 30;
+    font-variation-settings: "opsz"30;
 }
 
 h1 {
-    font-family: 'Bodoni Moda', serif;
-    font-weight: 700;
     color: var(--main-dark);
+    font-weight: 700;
     font-size: 80pt;
+    font-family: 'Bodoni Moda', serif;
 }
 
 h2 {
-    font-family: 'Bodoni Moda', serif;
-    font-weight: 600;
     color: var(--main-dark);
+    font-weight: 600;
     font-size: 20pt;
+    font-family: 'Bodoni Moda', serif;
 }
 
 #title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: fit-content;
     height: fit-content;
     margin: 0;
     padding: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     white-space: nowrap;
+    transform: translate(-50%, -50%);
+}
+
+#background {
+    position: absolute;
+    width: 60pt;
+    height: 60pt;
+    border-radius: 50%;
+    background-color: var(--main-dark);
+    transform: scale(0);
+    transition: transform 1s;
 }
 
 .unselectable {
     user-select: none;
 }
 
-.link:hover {
+.navigation_link {
+    color: var(--main-light);
+    mix-blend-mode: difference;
+}
+
+.navigation_link:hover {
     cursor: pointer;
 }
 
@@ -59,22 +74,22 @@ h2 {
 
 #projects_button {
     position: absolute;
-    bottom: 50%;
     right: 100px;
+    bottom: 50%;
     transform: translate(0, 50%);
 }
 
 @media only screen and (max-width: 1080px) {
     #about_button {
+        bottom: 10%;
         left: 50%;
         transform: translate(-50%, 50%);
-        bottom: 10%;
     }
 
     #projects_button {
         right: 50%;
-        transform: translate(50%, 50%);
         bottom: 20%;
+        transform: translate(50%, 50%);
     }
 }
 
