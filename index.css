@@ -89,6 +89,7 @@ h2 {
     mix-blend-mode: difference;
     transform: translate(0, 50%);
     bottom: 50%;
+    padding: 20px
 }
 
 .navigation_link:hover {
