@@ -10,7 +10,6 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background: var(--main-light);
     font-optical-sizing: auto;
     font-variation-settings: "opsz"30;
@@ -28,6 +27,10 @@ h2 {
     font-weight: 600;
     font-size: 20pt;
     font-family: 'Bodoni Moda', serif;
+}
+
+#wrapper {
+    overflow: hidden;
 }
 
 #title {
