@@ -11,6 +11,8 @@ var background_fullscreen = false
 var link_about = document.getElementById("about_link")
 var link_projects = document.getElementById("projects_link")
 
+var disabled_button = null
+
 function linkHoverStart(link) {
     if (background_fullscreen) return
 
@@ -33,23 +35,42 @@ function linkHoverEnd(link) {
 }
 
 function linkClick(link) {
-    if (background_fullscreen) return
+    if (background_fullscreen) {
+        background.classList.replace("background_fullscreen", "background_dot")
 
-    linkHoverStart(link)
+        document.getElementById("main").append(disabled_button)
 
-    background.classList.replace("background_dot", "background_fullscreen")
-    background.style.transform = null
+        background_fullscreen = false
 
-    if (link == link_about) {
-        link_projects.style.color = getComputedStyle(document.body).getPropertyValue("--main-dark")
-        link_projects.style.mixBlendMode = "normal"
+        background.addEventListener("transitionend", background_animationend)
     }
     else {
-        link_about.style.color = getComputedStyle(document.body).getPropertyValue("--main-dark")
-        link_about.style.mixBlendMode = "normal"
-    }
+        linkHoverStart(link)
 
-    background_fullscreen = true
+        disabled_button = link == link_about? link_projects : link_about
+
+        background.classList.replace("background_dot", "background_fullscreen")
+        background.style.transform = null
+
+        disabled_button.style.color = getComputedStyle(document.body).getPropertyValue("--main-dark")
+        disabled_button.style.mixBlendMode = "normal"
+    
+        background_fullscreen = true
+
+        background.addEventListener("transitionend", background_animationend)
+    }
+}
+
+function background_animationend(event) {
+    background.removeEventListener("transitionend", background_animationend)
+
+    if (background_fullscreen) {
+        disabled_button.remove()
+    }
+    else {
+        disabled_button.style.color = null
+        disabled_button.style.mixBlendMode = null
+    }
 }
 
 onmousemove = (event) => {
