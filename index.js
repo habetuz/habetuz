@@ -42,6 +42,8 @@ function linkClick(link) {
 
         background_fullscreen = false
 
+        linkHoverStart(link)
+
         background.addEventListener("transitionend", background_animationend)
     }
     else {
