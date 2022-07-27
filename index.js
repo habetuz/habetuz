@@ -36,6 +36,17 @@ function linkHoverEnd(link) {
 
 function linkClick(link) {
     if (background_fullscreen) {
+        if (disabled_button == link_projects) {
+            hideAbout()
+        } 
+        else {
+            hideProjects()
+        }
+
+        background.style.width = null
+        background.style.height = null
+        background.style.borderRadius = null
+
         background.classList.replace("background_fullscreen", "background_dot")
 
         document.getElementById("main").append(disabled_button)
@@ -50,6 +61,13 @@ function linkClick(link) {
         linkHoverStart(link)
 
         disabled_button = link == link_about? link_projects : link_about
+
+        if (disabled_button == link_projects) {
+            showAbout()
+        }
+        else {
+            showProjects()
+        }
 
         background.classList.replace("background_dot", "background_fullscreen")
         background.style.transform = null
@@ -68,10 +86,17 @@ function background_animationend(event) {
 
     if (background_fullscreen) {
         disabled_button.remove()
+
+        background.style.width = "100%"
+        background.style.height = "100%"
+        background.style.borderRadius = "0"
     }
     else {
         disabled_button.style.color = null
         disabled_button.style.mixBlendMode = null
+
+        disableAbout()
+        disableProjects()
     }
 }
 
