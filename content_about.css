@@ -39,6 +39,7 @@ p {
         columns: auto;
         width: 80vw;
         top: 10vh;
+        right: calc(50% - 80vw/2);
     }
 }
 
