@@ -82,7 +82,7 @@ function linkClick(link) {
         disabled_button.style.mixBlendMode = "normal"
 
         for (let svgLink of links) {
-            svgLink.style.backgroundColor = getComputedStyle(document.body).getPropertyValue("--main-light")
+            svgLink.style.backgroundColor = getComputedStyle(document.body).getPropertyValue("--second-light")
         }
     
         background_fullscreen = true

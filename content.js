@@ -1,13 +1,16 @@
 const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
-
     slidesPerView: 'auto',
     loopedSlides: 5,
     mousewheel: true,
     allowTouchMove: true,
     spaceBetween: 150,
     centeredSlides: true,
+
+    autoplay: {
+        delay: 5000,
+    },
 })
 
 var about = document.getElementById("content_about")
