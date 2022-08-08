@@ -62,8 +62,6 @@ a:link, a:visited {
     transform: translateY(-50%);
 
     transition: opacity .4s .5s;
-
-    border: solid red 30px;
 }
 
 @media screen and (max-width: 1080px) {
