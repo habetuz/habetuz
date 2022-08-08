@@ -11,8 +11,8 @@ p {
     position: absolute;
     right: 100px;
     top: 15vh;
-    width: 535px;
-    height: 70vh;
+    width: 670px;
+    height: 500px;
     text-align: justify;
 
     column-count: 2;
@@ -30,15 +30,15 @@ p {
 
 @media only screen and (max-width: 1080px) {
     #content_about {
-        right: calc(50% - 535px/2);
+        right: calc(50% - 670px/2);
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     #content_about {
         columns: auto;
         width: 80vw;
-        top: 10vh;
+        top: 17vh;
         right: calc(50% - 80vw/2);
     }
 }
