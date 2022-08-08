@@ -29,6 +29,10 @@ h2 {
     font-family: 'Bodoni Moda', serif;
 }
 
+a {
+    color: var(--second-light);
+}
+
 #main {
     position: relative;
     overflow: hidden;
