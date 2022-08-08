@@ -55,6 +55,7 @@ h2 {
     height: 60pt;
     border-radius: 50%;
     overflow: hidden;
+    z-index: -1;
 }
 
 #about_link {
@@ -63,6 +64,24 @@ h2 {
 
 #projects_link {
     right: 100px;
+}
+
+#mail_link {
+    -webkit-mask: url(assets/email.svg) no-repeat center;
+    mask: url(assets/email.svg) no-repeat center;
+}
+
+#github_link {
+    -webkit-mask: url(assets/github.svg) no-repeat center;
+    mask: url(assets/github.svg) no-repeat center;
+}
+
+#links {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
 .background_dot {
@@ -90,6 +109,15 @@ h2 {
 
 .navigation_link:hover {
     cursor: pointer;
+}
+
+.svg_link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background-color: var(--main-dark);
+    transition: background-color .5s .3s;
 }
 
 @media only screen and (max-width: 1080px) {

@@ -45,6 +45,7 @@
     height: 100%;
     box-shadow: inset 0px 0px 7px 10px var(--main-dark);
     z-index: 1;
+    pointer-events: none;
 }
 
 #content_projects {

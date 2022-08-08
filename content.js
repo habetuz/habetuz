@@ -5,6 +5,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 'auto',
     loopedSlides: 5,
     mousewheel: true,
+    allowTouchMove: true,
     spaceBetween: 150,
     centeredSlides: true,
 })

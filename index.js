@@ -11,6 +11,8 @@ var background_fullscreen = false
 var link_about = document.getElementById("about_link")
 var link_projects = document.getElementById("projects_link")
 
+var links = document.getElementsByClassName("svg_link")
+
 var disabled_button = null
 
 function linkHoverStart(link) {
@@ -51,6 +53,10 @@ function linkClick(link) {
 
         document.getElementById("main").append(disabled_button)
 
+        for (let svgLink of links) {
+            svgLink.style.backgroundColor = null
+        }
+
         background_fullscreen = false
 
         linkHoverStart(link)
@@ -74,6 +80,10 @@ function linkClick(link) {
 
         disabled_button.style.color = getComputedStyle(document.body).getPropertyValue("--main-dark")
         disabled_button.style.mixBlendMode = "normal"
+
+        for (let svgLink of links) {
+            svgLink.style.backgroundColor = getComputedStyle(document.body).getPropertyValue("--main-light")
+        }
     
         background_fullscreen = true
 
