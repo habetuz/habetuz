@@ -11,7 +11,7 @@ p {
     position: absolute;
     right: 100px;
     top: 25vh;
-    width: 690px;
+    width: 800px;
     height: 500px;
     text-align: justify;
 
@@ -30,11 +30,11 @@ p {
 
 @media only screen and (max-width: 1080px) {
     #content_about {
-        right: calc(50% - 670px/2);
+        right: calc(50% - 800px/2);
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     #content_about {
         columns: auto;
         width: 80vw;

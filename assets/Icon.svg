@@ -3,11 +3,12 @@
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#0C0C0C;}
-	.st1{display:none;fill:#D9D9D9;}
+	.st0{display:none;fill:#23292B;}
+	.st1{fill:#010202;}
 	.st2{display:none;}
 	.st3{display:inline;}
 	.st4{fill:#D9D9D9;}
+	.st5{display:none;fill:#B1CBC9;}
 </style>
 <rect y="0" class="st0" width="1000" height="1000"/>
 <path class="st1" d="M673.94,291.96H539.02h-0.8h-1.07h-47.2v1.92h46.54L443.27,564.6L342.95,291.96h-97.63h-0.54h-42.65v1.92h41.58
@@ -35,7 +36,7 @@
 		</g>
 	</g>
 </g>
-<path class="st4" d="M682.2,291L682.2,291l-125.95,0h-5.5h-16.5l0,0h-34.67v19.8h28L438,576.72L332.4,291h-83.05H238.9h-52.25v19.8
+<path class="st5" d="M682.2,291L682.2,291l-125.95,0h-5.5h-16.5l0,0h-34.67v19.8h28L438,576.72L332.4,291h-83.05H238.9h-52.25v19.8
 	h41.25v372.9h-38.5v19.8h98.18v-19.8h-38.23V319.57L391.8,709h22.83l134.73-397.64V683.7h-42.6v0h-7.17v19.8h197.45v-19.8H682.2v0
 	h-39.05V508.8h4.65c13.57,0,24.93,2.52,34.1,7.56c9.17,5.04,16.59,12.1,22.28,21.18c5.68,9.07,10.27,19.76,13.75,32.04H738V430.43
 	h-20.08c-3.48,12.29-8.07,22.69-13.75,31.21c-5.68,8.52-13.11,15.03-22.28,19.52c-9.17,4.49-20.53,6.74-34.1,6.74h-4.65V310.8H694
