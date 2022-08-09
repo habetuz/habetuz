@@ -13,6 +13,8 @@ body {
     background: var(--main-light);
     font-optical-sizing: auto;
     font-variation-settings: "opsz" 20;
+
+    overflow: hidden;
 }
 
 h1 {
@@ -31,6 +33,15 @@ h2 {
 
 a {
     color: var(--second-light);
+}
+
+#overflow_wrapper {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
 }
 
 #main {
