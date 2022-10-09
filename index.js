@@ -15,6 +15,10 @@ var links = document.getElementsByClassName("svg_link")
 
 var disabled_button = null
 
+SHEETS_TRACKING.sheetsURL = "https://script.google.com/macros/s/AKfycbyCUxU91LZl7Chs0017YWMvYvEUzoOBcVxznNIRGu_D8F1K2Nhd5fLFi1V5xUQN8P1R/exec"
+SHEETS_TRACKING.sheetName = "Tracking"
+SHEETS_TRACKING.start()
+
 function linkHoverStart(link) {
     if (background_fullscreen) return
 
