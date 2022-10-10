@@ -23,14 +23,14 @@ a:link, a:visited {
 .card_title {
 	text-align: center;
 	margin: 20px;
+    color: var(--second-light);
 	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-	color: var(--main-light);
 }
 
 .card_description {
-	font-family: 'Montserrat', serif;
-	color: var(--second-light);
+    font-family: 'Montserrat', serif;
+    color: var(--main-light);
 	font-weight: normal;
 	padding: 20px;
 }

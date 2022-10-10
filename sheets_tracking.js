@@ -138,13 +138,7 @@ var SHEETS_TRACKING = {
                 'sheetName': SHEETS_TRACKING.sheetName,
                 'id': SHEETS_TRACKING._id,
                 'type': 'register',
-            })})
+            })
+        })
     },
-
-    _updateTime() {
-        let currentTime = new Date().getTime()
-        let elapsedTime = currentTime - SHEETS_TRACKING._lastTimeUpdate
-        SHEETS_TRACKING._lastTimeUpdate = currentTime
-        SHEETS_TRACKING._activeTime += elapsedTime / 1000
-    }
 }

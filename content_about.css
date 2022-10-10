@@ -1,8 +1,8 @@
 p {
     color: var(--main-light);
-    font-weight: 400;
+    font-weight: 300;
     font-size: 12pt;
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Montserrat', serif;
 
     margin-top: 0;
 }
