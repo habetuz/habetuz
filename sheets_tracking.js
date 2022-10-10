@@ -78,7 +78,7 @@ var SHEETS_TRACKING = {
                 target = target.closest('a')
             }
 
-            if (target.tagName === 'A') {
+            if (target != null && target.tagName === 'A') {
                 let href = target.getAttribute('href')
 
                 fetch(SHEETS_TRACKING.sheetsURL, {
