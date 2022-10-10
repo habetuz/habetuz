@@ -63,7 +63,7 @@ var SHEETS_TRACKING = {
             SHEETS_TRACKING._lastTimeUpdate = currentTime
         }, 500)
 
-        // Reset idle counter
+        // Listen for user action to reset the idle counter
         let events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
         events.forEach(function(name) {
             document.addEventListener(name, () => {
@@ -71,7 +71,34 @@ var SHEETS_TRACKING = {
             }, true);
         });
 
-        // Get location and ip
+        // Listen for link clicks to register them
+        document.addEventListener('click', (e) => {
+            let target = e.target
+            if (target.tagName !== 'a') {
+                target = target.closest('a')
+            }
+
+            if (target.tagName === 'A') {
+                let href = target.getAttribute('href')
+
+                fetch(SHEETS_TRACKING.sheetsURL, {
+                    method: 'POST',
+                    redirect: 'follow',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        'link': href,
+        
+                        'sheetName': SHEETS_TRACKING.sheetName,
+                        'id': SHEETS_TRACKING._id,
+                        'type': 'link_click',
+                    })
+                })
+            }
+        })
+
         try {
             await fetch('https://geolocation-db.com/json/')
             .then(response => response.json())
