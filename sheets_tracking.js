@@ -17,6 +17,7 @@ var SHEETS_TRACKING = {
 
     start: async () => {
         // Handle time updates
+        // Interval for time update requests
         setInterval(() => {
             if (SHEETS_TRACKING._timeUpdatePaused) {
                 return
@@ -39,6 +40,7 @@ var SHEETS_TRACKING = {
             })
         }, 5000)
 
+        // Interval for time updates
         setInterval(() => {
             // Visibility changed
             if (SHEETS_TRACKING._wasHidden != document.hidden) {
@@ -49,17 +51,16 @@ var SHEETS_TRACKING = {
 
             SHEETS_TRACKING._timeUpdatePaused = idling || document.hidden
 
-            if (!SHEETS_TRACKING._timeUpdatePaused) {
-                console.log('active');
+            let currentTime = new Date().getTime()
 
+            if (!SHEETS_TRACKING._timeUpdatePaused) {
                 // Update time
-                let currentTime = new Date().getTime()
                 let elapsedTime = currentTime - SHEETS_TRACKING._lastTimeUpdate
                 SHEETS_TRACKING._lastTimeUpdate = currentTime
                 SHEETS_TRACKING._activeTime += elapsedTime / 1000
-            } else {
-                console.log('inactive');
-            }          
+            }
+
+            SHEETS_TRACKING._lastTimeUpdate = currentTime
         }, 500)
 
         // Reset idle counter
