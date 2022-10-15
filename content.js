@@ -20,6 +20,8 @@ function showAbout() {
     about.style.visibility = "visible"
     about.style.opacity = "1"
     about.style.transform = "translateY(0)"
+
+    SHEETS_TRACKING.updateValue('About', true, 'boolean')
 }
 
 function hideAbout() {
@@ -36,6 +38,8 @@ function disableAbout() {
 function showProjects() {
     projects.style.visibility = "visible"
     projects.style.opacity = "1"
+
+    SHEETS_TRACKING.updateValue('Projects', true, 'boolean')
 }
 
 function hideProjects() {

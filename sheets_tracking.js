@@ -141,4 +141,23 @@ var SHEETS_TRACKING = {
             })
         })
     },
+
+    updateValue: (name, value, type) => {
+        fetch(SHEETS_TRACKING.sheetsURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'valueName': name,
+                'value': value,
+                'valueType': type,
+
+                'sheetName': SHEETS_TRACKING.sheetName,
+                'id': SHEETS_TRACKING._id,
+                'type': 'value_update',
+            })
+        })
+    }
 }
