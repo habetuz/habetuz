@@ -71,34 +71,6 @@ var SHEETS_TRACKING = {
             }, true);
         });
 
-        // Listen for link clicks to register them
-        document.addEventListener('click', (e) => {
-            let target = e.target
-            if (target.tagName !== 'a') {
-                target = target.closest('a')
-            }
-
-            if (target != null && target.tagName === 'A') {
-                let href = target.getAttribute('href')
-
-                fetch(SHEETS_TRACKING.sheetsURL, {
-                    method: 'POST',
-                    redirect: 'follow',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        'link': href,
-
-                        'sheetName': SHEETS_TRACKING.sheetName,
-                        'id': SHEETS_TRACKING._id,
-                        'type': 'link_click',
-                    })
-                })
-            }
-        })
-
         try {
             await fetch('https://geolocation-db.com/json/')
                 .then(response => response.json())
@@ -112,7 +84,7 @@ var SHEETS_TRACKING = {
 
         }
 
-        // Get uuid for connection
+        // Get guid for connection
         try {
             await fetch('https://www.uuidgenerator.net/api/guid')
                 .then(response => response.text())
@@ -138,6 +110,43 @@ var SHEETS_TRACKING = {
                 'sheetName': SHEETS_TRACKING.sheetName,
                 'id': SHEETS_TRACKING._id,
                 'type': 'register',
+            })
+        })
+    },
+
+    registerLinkClick: (ev) => {
+        if (!(ev.button == 0 || ev.button == 1)) {
+            return
+        }
+
+        let target = ev.target
+        if (target.tagName !== 'a') {
+            target = target.closest('a')
+        }
+
+        if (!(target != null && target.tagName === 'A')) {
+            return
+        }
+
+        let href = target.getAttribute('href')
+
+        if (href == null) {
+            return
+        }
+
+        fetch(SHEETS_TRACKING.sheetsURL, {
+            method: 'POST',
+            redirect: 'follow',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'link': href,
+
+                'sheetName': SHEETS_TRACKING.sheetName,
+                'id': SHEETS_TRACKING._id,
+                'type': 'link_click',
             })
         })
     },

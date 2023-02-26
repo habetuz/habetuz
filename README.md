@@ -4,5 +4,5 @@ Welcome to my github. Check out my [website](marvin-fuchs.de) (german) for more 
 
 🎈 Currently working on:
 
-- [AdventOfCode](https://github.com/habetuz/AdventOfCode)
-- [Distribute](https://github.com/habetuz/Distribute)
+- [SharpLog](https://github.com/habetuz/SharpLog)
+- [Scheets_Tracking](https://github.com/habetuz/Sheets_Tracking)
