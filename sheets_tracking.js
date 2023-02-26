@@ -32,7 +32,7 @@ var SHEETS_TRACKING = {
                 },
                 body: JSON.stringify({
                     'time': Math.floor(SHEETS_TRACKING._activeTime),
-    
+
                     'sheetName': SHEETS_TRACKING.sheetName,
                     'id': SHEETS_TRACKING._id,
                     'type': 'time_update',
@@ -65,7 +65,7 @@ var SHEETS_TRACKING = {
 
         // Listen for user action to reset the idle counter
         let events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
-        events.forEach(function(name) {
+        events.forEach(function (name) {
             document.addEventListener(name, () => {
                 SHEETS_TRACKING._idleTime = new Date().getTime()
             }, true);
@@ -90,7 +90,7 @@ var SHEETS_TRACKING = {
                     },
                     body: JSON.stringify({
                         'link': href,
-        
+
                         'sheetName': SHEETS_TRACKING.sheetName,
                         'id': SHEETS_TRACKING._id,
                         'type': 'link_click',
@@ -101,23 +101,23 @@ var SHEETS_TRACKING = {
 
         try {
             await fetch('https://geolocation-db.com/json/')
-            .then(response => response.json())
-            .then(data => {
-                SHEETS_TRACKING._country = data.country_name
-                SHEETS_TRACKING._region = data.state
-                SHEETS_TRACKING._city = data.city
-                SHEETS_TRACKING._ip = data.IPv4
-            })
+                .then(response => response.json())
+                .then(data => {
+                    SHEETS_TRACKING._country = data.country_name
+                    SHEETS_TRACKING._region = data.state
+                    SHEETS_TRACKING._city = data.city
+                    SHEETS_TRACKING._ip = data.IPv4
+                })
         } catch {
 
         }
-        
+
         // Get uuid for connection
         try {
-            await fetch('https://www.uuidtools.com/api/generate/timestamp-first')
-                .then(response => response.json())
+            await fetch('https://www.uuidgenerator.net/api/guid')
+                .then(response => response.text())
                 .then(data => {
-                    SHEETS_TRACKING._id = data[0]
+                    SHEETS_TRACKING._id = data
                 })
         } catch {
 
