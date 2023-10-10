@@ -91,6 +91,11 @@ a {
     mask: url(assets/github.svg) no-repeat center;
 }
 
+#linkedin_link {
+    -webkit-mask: url(assets/linkedin.svg) no-repeat center;
+    mask: url(assets/linkedin.svg) no-repeat center;
+}
+
 #links {
     position: absolute;
     left: 50%;
