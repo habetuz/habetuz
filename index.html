@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <title>Marvin Fuchs</title>
@@ -31,32 +31,25 @@
             <div id="background" class="background_dot"></div>
             <h1 id="title" class="unselectable">&emsp;&emsp;Marvin<br>Fuchs</h1>
             <h2 id="about_link" class="unselectable navigation_link" onmouseover="linkHoverStart(this)"
-                onmouseout="linkHoverEnd(this)" onclick="linkClick(this)">über mich</h2>
+                onmouseout="linkHoverEnd(this)" onclick="linkClick(this)">about me</h2>
             <h2 id="projects_link" class="unselectable navigation_link" onmouseover="linkHoverStart(this)"
-                onmouseout="linkHoverEnd(this)" onclick="linkClick(this)">projekte</h2>
+                onmouseout="linkHoverEnd(this)" onclick="linkClick(this)">projects</h2>
             <h2 id="privacy_policy" class="unselectable navigation_link" onmouseover="linkHoverStart(this)"
-            onmouseout="linkHoverEnd(this)" onclick="window.open('./datenschutz.html')">Datenschutzerklärung</h2>
+            onmouseout="linkHoverEnd(this)" onclick="window.open('./datenschutz.html')">Privacy Policy</h2>
         </div>
         <div id="content_about">
-            <p>Hey! Wie auch immer Du dich auf diese Website verirrt hast: Herzlich willkommen! </p>
-            <p>Erst mal ein paar Fakten über mich. Ich bin 22 Jahre alt, komme aus Karlsruhe und studiere aktuell Informatik Dual bei SAP. </p>
-            <p>Wenn ich gerade mal nicht vor meinem PC sitze, bin ich auch gerne mal Fotograf. Mein <a
-                    href="https://www.instagram.com/marvin_hello/" target="_blank">Instagram</a> aber, auf dem ich meine
-                Fotos dann hochlade, ist gerade leider inaktiv (hoffentlich nicht mehr lange!). Ansonsten habe ich auch
-                schon das ein oder andere amateurhafte Filmprojekt gemacht. Wenn Du dir das anschauen möchtest, findest
-                du sie auf meinem <a href="https://www.youtube.com/channel/UClHom0wDebAAocClGxrsNkg"
-                    target="_blank">YouTube</a>.</p>
-            <p>Programmieren zu können hat mich schon immer fasziniert. Seit ich im Informatikunterricht der Mittelstufe
-                das erste Mal damit in Kontakt kam, habe ich nicht mehr aufgehört. In der Retroperspektive kann ich
-                sagen: Es ist nicht so schwer zu lernen, wie gedacht! Mein erstes Projekt, eine Android Bestell-App für
-                die Bar auf einem Geburtstag, war vielleicht noch nicht schön gestaltet oder programmiert, aber sie hat
-                ihren Zweck erfüllt. Über die Jahre hat sich die Qualität mit zunehmenden Projekten und Erfahrung
-                verbessert. Auf meinem <a href="https://github.com/habetuz" target="_blank">GitHub</a> findest Du alle
-                meine Projekte, darunter ein Schachalgorithmus, ein anpassbarer Logger für .Net oder eine Website, die
-                Sortieralgorithmen visualisiert.</p>
-            <p>Ich hoffe, über diese Website bekommst Du einen Eindruck von mir und meiner Arbeit, über <a
-                    href="mailto:info@marvin-fuchs.de" target="_blank">info@marvin-fuchs.de</a> kannst Du mich gerne
-                kontaktieren!</p>
+            <p>Hey! However you found your way to this website: Welcome! </p>
+            <p>First, a few facts about me. I'm 22 years old, from Karlsruhe, and currently studying Computer Science in a dual program at SAP. </p>
+            <p>When I'm not sitting in front of my PC, I enjoy playing badminton and swimming.</p>
+            <p>Being able to program has always fascinated me. Ever since I first came into contact with it in my middle school computer science class,
+                I haven't stopped. Looking back, I can
+                say: It's not as hard to learn as I thought! My first project, an Android ordering app for
+                the bar at a birthday party, might not have been beautifully designed or programmed, but it
+                served its purpose. Over the years, the quality has improved with increasing projects and experience. On my <a href="https://github.com/habetuz" target="_blank">GitHub</a> you can find all
+                my projects, including a chess algorithm, a customizable logger for .Net, and a website that
+                visualizes sorting algorithms. In spring 2025, I started my homelab journey with Kubernetes and FluxCD.</p>
+            <p>I hope this website gives you an impression of me and my work. Feel free to contact me at <a
+                    href="mailto:info@marvin-fuchs.de" target="_blank">info@marvin-fuchs.de</a>!</p>
         </div>
         <div id="content_projects" class="swiper">
             <div class="swiper-wrapper">
@@ -71,70 +64,66 @@
                     <div class="card">
                         <img alt="Screenshot der Zwischenschiene Website" class="card_image" src="assets/github-images/zwischenschiene.png">
                         <h3 class="card_title">Zwischenschiene - Interrail</h3>
-                            <p class="card_description">Ein Reiseblog über die Interrail Reise durch Europa von meiner
-                                Freundin und mir.</p>
+                            <p class="card_description">A travel blog about my girlfriend's and my Interrail journey through Europe.</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://github.com/habetuz/GameSense" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/gamesense.png">
                         <h3 class="card_title">GameSense</h3>
-                            <p class="card_description">GameSense API von Steelseries für .Net Framework. Bietet über
-                                der API hinaus auch Implementierungen für Animationen und Events.</p>
+                            <p class="card_description">GameSense API from Steelseries for .Net Framework. Offers implementations for animations and events beyond the API.</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://github.com/habetuz/chess_ai" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/chess_ai.png">
                         <h3 class="card_title">chess_ai</h3>
-                            <p class="card_description">Eine Schach KI. Nutzt den MinMax Algorithmus und Alpha-Beta
-                                Pruning für die Suche des besten Zuges!</p>
+                            <p class="card_description">A chess AI. Uses the MinMax algorithm and Alpha-Beta
+                                Pruning to find the best move!</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://sharplog.marvin-fuchs.de" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/sharplog.png">
                         <h3 class="card_title">SharpLog</h3>
-                            <p class="card_description">Ein Konsolen-Logger für große Projekte in .Net Framework.</p>
+                            <p class="card_description">A console logger for large projects in .Net Framework.</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://sort.marvin-fuchs.de" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/sort.png">
                         <h3 class="card_title">Sort</h3>
-                            <p class="card_description">Eine Website, auf der Sortier-Algorithmen visualisiert
-                                werden. Nutzt svg.js.</p>
+                            <p class="card_description">A website that visualizes sorting algorithms. Uses svg.js.</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://github.com/habetuz/me" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/me.png">
-                        <h3 class="card_title">Meine Website</h3>
-                            <p class="card_description">Meine persönliche Website. Ein Langzeitprojekt, das immer mal
-                                wieder verändert wird!</p>
+                        <h3 class="card_title">My Website</h3>
+                            <p class="card_description">My personal website. A long-term project that gets updated from time to time!</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://github.com/habetuz/adventOfCode" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/advent_of_code.png">
                         <h3 class="card_title">AdventOfCode</h3>
-                            <p class="card_description">Meine AdventOfCode Lösungen in C#.</p>
+                            <p class="card_description">My AdventOfCode solutions in C#.</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://github.com/habetuz/Sheets_Tracking" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/sheets_tracking.png">
                         <h3 class="card_title">Sheets_Tracking</h3>
-                            <p class="card_description">Ein Tracker für wenig genutzte Seiten, der schnell und einfach
-                                eingebaut werden kann. Er speichert Daten unkompliziert in Google Spreadsheets.</p>
+                            <p class="card_description">A tracker for low-traffic websites that can be quickly and easily
+                                integrated. It stores data straightforwardly in Google Spreadsheets.</p>
                     </div>
                 </a>
                 <a class="swiper-slide" href="https://github.com/habetuz/Distribute" target="blank">
                     <div class="card">
                         <img class="card_image" src="assets/github-images/distribute.png">
                         <h3 class="card_title">Distribute</h3>
-                            <p class="card_description">Ein Commandline Tool mit dem Fotos schnell und einfach in eine
-                                Ordnerstruktur einsortiert werden können.</p>
+                            <p class="card_description">A command line tool for quickly and easily sorting photos into a
+                                folder structure.</p>
                     </div>
                 </a>
             </div>
