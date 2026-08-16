@@ -40,8 +40,7 @@
           # hosts/vps-netcup/ssh-website.nix.
           subPackages = [ "." ];
 
-          # Small binaries; skip the standard Go test phase since there
-          # aren't any tests yet. Flip this to `false` once tests exist.
+          # skip the standard Go test phase since there aren't any tests.
           doCheck = false;
 
           # `-s -w` strips DWARF + symbol tables (about a 30% size cut).
